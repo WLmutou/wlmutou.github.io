@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            numpy-15-10-2 | 
+        
+        燕君
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/avatar.jpeg">
+    <link rel="icon" href="/img/avatar.jpeg">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="长假，长假？放那么长的假干嘛？哎，我们应该努力工作，努力挣钱…好吧，没事，就接续看看大蟒蛇科学计算吧。。。:)(:….">
+    <meta name="keywords" content=",numpy">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="燕君">
+    <meta name="msapplication-starturl" content="http://wlmutou.github.io/2015/10/02/2015/numpy/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="燕君">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://wlmutou.github.io/2015/10/02/2015/numpy/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="numpy-15-10-2 | 燕君">
+    <meta property="og:image" content="/img/avatar.jpeg">
+    <meta property="og:description" content="长假，长假？放那么长的假干嘛？哎，我们应该努力工作，努力挣钱…好吧，没事，就接续看看大蟒蛇科学计算吧。。。:)(:….">
+    <meta property="og:article:tag" content="numpy"> 
+
+    
+        <meta property="article:published_time" content="Fri Oct 02 2015 20:11:36 GMT+0800">
+        <meta property="article:modified_time" content="Sun Mar 01 2020 09:16:22 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://wlmutou.github.io/2015/10/02/2015/numpy/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://wlmutou.github.io/2015/10/02/2015/numpy/index.html",
+    "headline": "numpy-15-10-2",
+    "datePublished": "Fri Oct 02 2015 20:11:36 GMT+0800",
+    "dateModified": "Sun Mar 01 2020 09:16:22 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "燕君",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpeg"
+        },
+        "description": "你好！这里是燕君站!"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "燕君",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/avatar.jpeg"
+        }
+    },
+    "keywords": ",numpy",
+    "description": "长假，长假？放那么长的假干嘛？哎，我们应该努力工作，努力挣钱…好吧，没事，就接续看看大蟒蛇科学计算吧。。。:)(:….",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+        <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-133473658-1', 'auto');ga('send', 'pageview');
+</script>
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-1-创建"><span class="post-toc-text">1.1 创建</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-2更高效率得创建python数组"><span class="post-toc-text">1.2更高效率得创建python数组</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-1-存储元素"><span class="post-toc-text">2.1 存储元素</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-2-多维数组"><span class="post-toc-text">2.2 多维数组</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-ufunc运算"><span class="post-toc-text">3.ufunc运算</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-2-广播"><span class="post-toc-text">3.2 广播</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                numpy-15-10-2
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpeg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>燕君</strong>
+        <span>10月 02, 2015</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/numpy/">numpy</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=numpy-15-10-2&url=http://wlmutou.github.io/2015/10/02/2015/numpy/index.html&pic=http://wlmutou.github.io/img/avatar.jpeg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=numpy-15-10-2&url=http://wlmutou.github.io/2015/10/02/2015/numpy/index.html&via=燕君" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://wlmutou.github.io/2015/10/02/2015/numpy/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://wlmutou.github.io/2015/10/02/2015/numpy/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>长假，长假？放那么长的假干嘛？哎，我们应该努力工作，努力挣钱…<br>好吧，没事，就接续看看大蟒蛇科学计算吧。。。:)(:….<br><a id="more"></a></p>
+<h2 id="1-1-创建"><a href="#1-1-创建" class="headerlink" title="1.1 创建"></a>1.1 创建</h2><p>通过给array函数传递Python的序列对象创建数组,如果传递的是多层嵌套的序列,将创建多<br>维数组:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = np.array([<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = np.array([<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = np.array([[<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],[<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line">array([<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c</span><br><span class="line">array([[ <span class="number">2</span>,  <span class="number">3</span>,  <span class="number">4</span>,  <span class="number">5</span>],</span><br><span class="line">       [ <span class="number">6</span>,  <span class="number">7</span>,  <span class="number">8</span>,  <span class="number">9</span>],</span><br><span class="line">       [<span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.dtype</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">NameError: name <span class="string">'d'</span> <span class="keyword">is</span> <span class="keyword">not</span> defined</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c.dtype    <span class="comment">#多维数组才有dtype得属性</span></span><br><span class="line">dtype(<span class="string">'int32'</span>)</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>数组的大小通过shape属性获取<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.shape                    <span class="comment">#数组a只有一个元素，因为这是一维数组</span></span><br><span class="line">(<span class="number">4</span>,)                           </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c.shape                    <span class="comment">#数组c有两个元素，c为二维数组</span></span><br><span class="line">(<span class="number">3</span>, <span class="number">4</span>)</span><br></pre></td></tr></table></figure></p>
+<p>c数组里,第0轴的长度为3,第1轴的长度为4。还可以通过修改数组的shape属性,在保持数组元素个数不<br>变的情况下,改变数组每个轴的长度。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>c.shape = <span class="number">4</span>,<span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c</span><br><span class="line">array([[ <span class="number">2</span>,  <span class="number">3</span>,  <span class="number">4</span>],</span><br><span class="line">       [ <span class="number">5</span>,  <span class="number">6</span>,  <span class="number">7</span>],</span><br><span class="line">       [ <span class="number">8</span>,  <span class="number">9</span>, <span class="number">10</span>],</span><br><span class="line">       [<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>]])</span><br></pre></td></tr></table></figure></p>
+<p>某个轴元素为-1，自动计算其中得长度<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>c.shape = <span class="number">2</span>,<span class="number">-1</span>                </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c</span><br><span class="line">array([[ <span class="number">2</span>,  <span class="number">3</span>,  <span class="number">4</span>,  <span class="number">5</span>,  <span class="number">6</span>,  <span class="number">7</span>],</span><br><span class="line">       [ <span class="number">8</span>,  <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>]])</span><br><span class="line">       </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c.shape = <span class="number">-1</span>,<span class="number">-1</span>                <span class="comment">#嘿嘿，两个都是-1,将出错了...</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError: can only specify one unknown dimension</span><br></pre></td></tr></table></figure></p>
+<p>数组reshape方法，可创建一个改变了尺寸得新数组，原来得数组得shape保持不变.但是，修改其中一个数组，另外一个数组得元素也会跟着改变。因为其共享数据存储区域。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = a.reshape((<span class="number">2</span>,<span class="number">2</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d</span><br><span class="line">array([[<span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">       [<span class="number">3</span>, <span class="number">4</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line">array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="number">1</span>]= <span class="number">300</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d</span><br><span class="line">array([[  <span class="number">1</span>, <span class="number">300</span>],</span><br><span class="line">       [  <span class="number">3</span>,   <span class="number">4</span>]])</span><br></pre></td></tr></table></figure></p>
+<p>数组得元素类型可以通过dtype属性获取。<br>通过dtype参数在创建得时候，指定元素类型…<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.array([[<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],[<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>]],dtype=np.float)</span><br><span class="line">array([[  <span class="number">1.</span>,   <span class="number">3.</span>,   <span class="number">4.</span>,   <span class="number">5.</span>],</span><br><span class="line">       [  <span class="number">5.</span>,   <span class="number">6.</span>,   <span class="number">7.</span>,   <span class="number">8.</span>],</span><br><span class="line">       [ <span class="number">10.</span>,  <span class="number">11.</span>,  <span class="number">12.</span>,  <span class="number">13.</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.array([[<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],[<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>]],dtype=np.complex)</span><br><span class="line">array([[  <span class="number">1.</span>+<span class="number">0.j</span>,   <span class="number">3.</span>+<span class="number">0.j</span>,   <span class="number">4.</span>+<span class="number">0.j</span>,   <span class="number">5.</span>+<span class="number">0.j</span>],</span><br><span class="line">       [  <span class="number">5.</span>+<span class="number">0.j</span>,   <span class="number">6.</span>+<span class="number">0.j</span>,   <span class="number">7.</span>+<span class="number">0.j</span>,   <span class="number">8.</span>+<span class="number">0.j</span>],</span><br><span class="line">       [ <span class="number">10.</span>+<span class="number">0.j</span>,  <span class="number">11.</span>+<span class="number">0.j</span>,  <span class="number">12.</span>+<span class="number">0.j</span>,  <span class="number">13.</span>+<span class="number">0.j</span>]])</span><br></pre></td></tr></table></figure></p>
+<h2 id="1-2更高效率得创建python数组"><a href="#1-2更高效率得创建python数组" class="headerlink" title="1.2更高效率得创建python数组"></a>1.2更高效率得创建python数组</h2><p>.arange函数，与python得arange函数类似.开始值，重值和布长，创建一维数组(不包重值)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.arange(<span class="number">0</span>, <span class="number">1</span>, <span class="number">0.1</span>)</span><br><span class="line">array([ <span class="number">0.</span> ,  <span class="number">0.1</span>,  <span class="number">0.2</span>,  <span class="number">0.3</span>,  <span class="number">0.4</span>,  <span class="number">0.5</span>,  <span class="number">0.6</span>,  <span class="number">0.7</span>,  <span class="number">0.8</span>,  <span class="number">0.9</span>])</span><br></pre></td></tr></table></figure></p>
+<p>.linspace函数通过指定开始值、终值和元素个数来创建一维数组,通过endpoint关键字指定<br>是否包括终值,缺省设置是包括终值:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.linspace(<span class="number">0</span>, <span class="number">1</span>, <span class="number">12</span>)</span><br><span class="line">array([ <span class="number">0.</span>        ,  <span class="number">0.09090909</span>,  <span class="number">0.18181818</span>,  <span class="number">0.27272727</span>,  <span class="number">0.36363636</span>,</span><br><span class="line">        <span class="number">0.45454545</span>,  <span class="number">0.54545455</span>,  <span class="number">0.63636364</span>,  <span class="number">0.72727273</span>,  <span class="number">0.81818182</span>,</span><br><span class="line">        <span class="number">0.90909091</span>,  <span class="number">1.</span>        ])</span><br></pre></td></tr></table></figure></p>
+<p>.logspace 与linspace类似，不过它创建得等比数列.也就是(10**初值，10**终值，个数)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.logspace(<span class="number">0</span>, <span class="number">2</span>, <span class="number">20</span>)                <span class="comment">#创建20个元素得等比数列</span></span><br><span class="line">array([   <span class="number">1.</span>        ,    <span class="number">1.27427499</span>,    <span class="number">1.62377674</span>,    <span class="number">2.06913808</span>,</span><br><span class="line">          <span class="number">2.6366509</span> ,    <span class="number">3.35981829</span>,    <span class="number">4.2813324</span> ,    <span class="number">5.45559478</span>,</span><br><span class="line">          <span class="number">6.95192796</span>,    <span class="number">8.8586679</span> ,   <span class="number">11.28837892</span>,   <span class="number">14.38449888</span>,</span><br><span class="line">         <span class="number">18.32980711</span>,   <span class="number">23.35721469</span>,   <span class="number">29.76351442</span>,   <span class="number">37.92690191</span>,</span><br><span class="line">         <span class="number">48.32930239</span>,   <span class="number">61.58482111</span>,   <span class="number">78.47599704</span>,  <span class="number">100.</span>        ])</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>还有frombuffuer, fromstring, fromfile函数从字节序列创建数组<br>fromstring创建数组，创建8bit的整数数组就是把字符得ascii编码，创建16bit得数组，就把相临得表示一个整数.字节98和97当作一个16位得整数，其值就是98*256+97=25185<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>s1 = <span class="string">"abcdefg"</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.fromstring(s1, dtype=np.int8)</span><br><span class="line">array([ <span class="number">97</span>,  <span class="number">98</span>,  <span class="number">99</span>, <span class="number">100</span>, <span class="number">101</span>, <span class="number">102</span>, <span class="number">103</span>], dtype=int8)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s1 = <span class="string">"abcdefgh"</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.fromstring(s1, dtype=np.int16)</span><br><span class="line">array([<span class="number">25185</span>, <span class="number">25699</span>, <span class="number">26213</span>, <span class="number">26727</span>], dtype=int16)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s2 = <span class="string">"abcdefg"</span>                      </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.fromstring(s2, dtype=np.int16)    <span class="comment">#这里，变成int16得时候，记得字符串要是2得倍数，否则会出错</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError: string size must be a multiple of element size</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>可以用个python函数，将数组下标转换为数组中对应得值，然后使用次数组创建数组<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(i)</span>:</span></span><br><span class="line"><span class="meta">... </span>	<span class="keyword">return</span> i%<span class="number">4</span>+<span class="number">1</span></span><br><span class="line"><span class="meta">... </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.fromfunction(func, (<span class="number">10</span>,))</span><br><span class="line">array([ <span class="number">1.</span>,  <span class="number">2.</span>,  <span class="number">3.</span>,  <span class="number">4.</span>,  <span class="number">1.</span>,  <span class="number">2.</span>,  <span class="number">3.</span>,  <span class="number">4.</span>,  <span class="number">1.</span>,  <span class="number">2.</span>])</span><br></pre></td></tr></table></figure></p>
+<p>fromfunction函数，第一个参数为计算每个数组元素得函数，第二个参数为数组得大小(shape),因为它支持多维数组，所以第二个参数必须是一个序列.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">func2</span><span class="params">(x,y)</span>:</span></span><br><span class="line"><span class="meta">... </span>	<span class="keyword">return</span> (x+<span class="number">1</span>)*(y+<span class="number">1</span>)</span><br><span class="line"><span class="meta">... </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>all = np.fromfunction(func2, (<span class="number">9</span>,<span class="number">9</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>all</span><br><span class="line">array([[  <span class="number">1.</span>,   <span class="number">2.</span>,   <span class="number">3.</span>,   <span class="number">4.</span>,   <span class="number">5.</span>,   <span class="number">6.</span>,   <span class="number">7.</span>,   <span class="number">8.</span>,   <span class="number">9.</span>],</span><br><span class="line">       [  <span class="number">2.</span>,   <span class="number">4.</span>,   <span class="number">6.</span>,   <span class="number">8.</span>,  <span class="number">10.</span>,  <span class="number">12.</span>,  <span class="number">14.</span>,  <span class="number">16.</span>,  <span class="number">18.</span>],</span><br><span class="line">       [  <span class="number">3.</span>,   <span class="number">6.</span>,   <span class="number">9.</span>,  <span class="number">12.</span>,  <span class="number">15.</span>,  <span class="number">18.</span>,  <span class="number">21.</span>,  <span class="number">24.</span>,  <span class="number">27.</span>],</span><br><span class="line">       [  <span class="number">4.</span>,   <span class="number">8.</span>,  <span class="number">12.</span>,  <span class="number">16.</span>,  <span class="number">20.</span>,  <span class="number">24.</span>,  <span class="number">28.</span>,  <span class="number">32.</span>,  <span class="number">36.</span>],</span><br><span class="line">       [  <span class="number">5.</span>,  <span class="number">10.</span>,  <span class="number">15.</span>,  <span class="number">20.</span>,  <span class="number">25.</span>,  <span class="number">30.</span>,  <span class="number">35.</span>,  <span class="number">40.</span>,  <span class="number">45.</span>],</span><br><span class="line">       [  <span class="number">6.</span>,  <span class="number">12.</span>,  <span class="number">18.</span>,  <span class="number">24.</span>,  <span class="number">30.</span>,  <span class="number">36.</span>,  <span class="number">42.</span>,  <span class="number">48.</span>,  <span class="number">54.</span>],</span><br><span class="line">       [  <span class="number">7.</span>,  <span class="number">14.</span>,  <span class="number">21.</span>,  <span class="number">28.</span>,  <span class="number">35.</span>,  <span class="number">42.</span>,  <span class="number">49.</span>,  <span class="number">56.</span>,  <span class="number">63.</span>],</span><br><span class="line">       [  <span class="number">8.</span>,  <span class="number">16.</span>,  <span class="number">24.</span>,  <span class="number">32.</span>,  <span class="number">40.</span>,  <span class="number">48.</span>,  <span class="number">56.</span>,  <span class="number">64.</span>,  <span class="number">72.</span>],</span><br><span class="line">       [  <span class="number">9.</span>,  <span class="number">18.</span>,  <span class="number">27.</span>,  <span class="number">36.</span>,  <span class="number">45.</span>,  <span class="number">54.</span>,  <span class="number">63.</span>,  <span class="number">72.</span>,  <span class="number">81.</span>]])</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>没事，就记录记录下了。下次就不用老是找那本书了</p>
+<h2 id="2-1-存储元素"><a href="#2-1-存储元素" class="headerlink" title="2.1 存储元素"></a>2.1 存储元素</h2><p>数组存储元素与python一样<br>其他与python不一样得地发<br>1.使用整数序列<br>当使用整数序列对数组元素进行存取时,将使用整数序列中的每个元素作为下标,整数序列可以是列<br>表或者数组。使用整数序列作为下标获得的数组不和原始数组共享数据空间。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = np.arange(<span class="number">10</span>,<span class="number">1</span>,<span class="number">-1</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x</span><br><span class="line">array([<span class="number">10</span>,  <span class="number">9</span>,  <span class="number">8</span>,  <span class="number">7</span>,  <span class="number">6</span>,  <span class="number">5</span>,  <span class="number">4</span>,  <span class="number">3</span>,  <span class="number">2</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x[[<span class="number">3</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">8</span>]]</span><br><span class="line">array([<span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">2</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = x[np.array([<span class="number">3</span>,<span class="number">3</span>,<span class="number">-3</span>,<span class="number">8</span>])]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line">array([<span class="number">7</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">2</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b[<span class="number">2</span>]= <span class="number">100</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line">array([  <span class="number">7</span>,   <span class="number">7</span>, <span class="number">100</span>,   <span class="number">2</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x</span><br><span class="line">array([<span class="number">10</span>,  <span class="number">9</span>,  <span class="number">8</span>,  <span class="number">7</span>,  <span class="number">6</span>,  <span class="number">5</span>,  <span class="number">4</span>,  <span class="number">3</span>,  <span class="number">2</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x[[<span class="number">3</span>,<span class="number">5</span>,<span class="number">1</span>]] = <span class="number">-1</span>,<span class="number">-2</span>,<span class="number">-3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x</span><br><span class="line">array([<span class="number">10</span>, <span class="number">-3</span>,  <span class="number">8</span>, <span class="number">-1</span>,  <span class="number">6</span>, <span class="number">-2</span>,  <span class="number">4</span>,  <span class="number">3</span>,  <span class="number">2</span>])</span><br></pre></td></tr></table></figure></p>
+<p>2.使用布尔数组<br>当使用布尔数组b作为下标存取数组x中的元素时,将收集数组x中所有在数组b中对应下标为True的<br>元素。使用布尔数组作为下标获得的数组不和原始数组共享数据空间,注意这种方式只对应于布尔数<br>组,不能使用布尔列表。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = np.arange(<span class="number">5</span>,<span class="number">0</span>,<span class="number">-1</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x</span><br><span class="line">array([<span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x[np.array([<span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>])]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># 布尔数组中下标为0,2的元素为True,因此获取x中下标为0,2的元素</span></span><br><span class="line">array([<span class="number">5</span>, <span class="number">3</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x[[<span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># 如果是布尔列表,则把True当作1, False当作0,按照整数序列方式获取x中的元素</span></span><br><span class="line">array([<span class="number">4</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x[np.array([<span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">True</span>, <span class="literal">True</span>])]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># 布尔数组的长度不够时,不够的部分都当作False</span></span><br><span class="line">array([<span class="number">5</span>, <span class="number">3</span>, <span class="number">2</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x[np.array([<span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">True</span>, <span class="literal">True</span>])] = <span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># 布尔数组下标也可以用来修改元素</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x</span><br><span class="line">array([<span class="number">-1</span>,<span class="number">4</span>, <span class="number">-2</span>, <span class="number">-3</span>,<span class="number">1</span>])</span><br></pre></td></tr></table></figure></p>
+<p>布尔数组一般不是手工产生，而是使用布尔运算得ufunc函数产生<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = np.random.rand(<span class="number">10</span>)        <span class="comment">#np产生随机数与python得random有点点不一样</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x </span><br><span class="line">array([ <span class="number">0.19109582</span>,  <span class="number">0.65634825</span>,  <span class="number">0.80140024</span>,  <span class="number">0.7822562</span> ,  <span class="number">0.63733259</span>,</span><br><span class="line">        <span class="number">0.01685087</span>,  <span class="number">0.74910217</span>,  <span class="number">0.47847799</span>,  <span class="number">0.18158406</span>,  <span class="number">0.63200789</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x &gt; <span class="number">0.5</span></span><br><span class="line">array([<span class="literal">False</span>,  <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>], dtype=bool)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x[x&gt;<span class="number">0.5</span>]</span><br><span class="line">array([ <span class="number">0.65634825</span>,  <span class="number">0.80140024</span>,  <span class="number">0.7822562</span> ,  <span class="number">0.63733259</span>,  <span class="number">0.74910217</span>,</span><br><span class="line">        <span class="number">0.63200789</span>])</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-2-多维数组"><a href="#2-2-多维数组" class="headerlink" title="2.2 多维数组"></a>2.2 多维数组</h2><p>多维数组的存取和一维数组类似,因为多维数组有多个轴,因此它的下标需要用多个值来表示,<br>NumPy采用组元(tuple)作为数组的下标.(组元不需要圆括号.虽然经常在Python中用圆括号将组元括起来,但是其实组元的语法定义只需要用逗号隔开即可,例如 x,y=y,x 就是用组元交换变量值的一个例子。)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;myarray =  np.arange(<span class="number">0</span>, <span class="number">60</span>, <span class="number">10</span>).reshape(<span class="number">-1</span>, <span class="number">1</span>) + np.arange(<span class="number">0</span>,<span class="number">6</span>)</span><br><span class="line">myarray([[ <span class="number">0</span>,  <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>,  <span class="number">4</span>,  <span class="number">5</span>],</span><br><span class="line">       [<span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>],</span><br><span class="line">       [<span class="number">20</span>, <span class="number">21</span>, <span class="number">22</span>, <span class="number">23</span>, <span class="number">24</span>, <span class="number">25</span>],</span><br><span class="line">       [<span class="number">30</span>, <span class="number">31</span>, <span class="number">32</span>, <span class="number">33</span>, <span class="number">34</span>, <span class="number">35</span>],</span><br><span class="line">       [<span class="number">40</span>, <span class="number">41</span>, <span class="number">42</span>, <span class="number">43</span>, <span class="number">44</span>, <span class="number">45</span>],</span><br><span class="line">       [<span class="number">50</span>, <span class="number">51</span>, <span class="number">52</span>, <span class="number">53</span>, <span class="number">54</span>, <span class="number">55</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>myarray[<span class="number">4</span>:,<span class="number">4</span>:]</span><br><span class="line">array([[<span class="number">44</span>, <span class="number">45</span>],</span><br><span class="line">       [<span class="number">54</span>, <span class="number">55</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>myarray[<span class="number">2</span>::<span class="number">2</span>,::<span class="number">2</span>]</span><br><span class="line">array([[<span class="number">20</span>, <span class="number">22</span>, <span class="number">24</span>],</span><br><span class="line">       [<span class="number">40</span>, <span class="number">42</span>, <span class="number">44</span>]])</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>2.3结构数组</p>
+<p>为了与c方便得读取与转换数据，定义与c得struct关键子结构类型<br>定义一个结构数组,它的每个元素都有name, age和weight字段。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">&gt;&gt;&gt;persontype = np.dtype(&#123;</span><br><span class="line">    <span class="string">'names'</span>:[<span class="string">'name'</span>, <span class="string">'age'</span>, <span class="string">'weight'</span>],</span><br><span class="line">    <span class="string">'formats'</span>:[<span class="string">'S32'</span>,<span class="string">'i'</span>, <span class="string">'f'</span>]&#125;)</span><br><span class="line">&gt;&gt;&gt;a = np.array([(<span class="string">"Zhang"</span>,<span class="number">32</span>,<span class="number">75.5</span>),(<span class="string">"wang"</span>,<span class="number">24</span>,<span class="number">65.2</span>)],dtype=persontype)</span><br><span class="line">&gt;&gt;&gt;a</span><br><span class="line">array([(<span class="string">'Zhang'</span>, <span class="number">32</span>, <span class="number">75.5</span>), (<span class="string">'wang'</span>, <span class="number">24</span>, <span class="number">65.19999694824219</span>)], </span><br><span class="line">      dtype=[(<span class="string">'name'</span>, <span class="string">'S32'</span>), (<span class="string">'age'</span>, <span class="string">'&lt;i4'</span>), (<span class="string">'weight'</span>, <span class="string">'&lt;f4'</span>)])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="number">1</span>]</span><br><span class="line">(<span class="string">'wang'</span>, <span class="number">24</span>, <span class="number">65.19999694824219</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="string">"name"</span>]</span><br><span class="line">array([<span class="string">'Zhang'</span>, <span class="string">'wang'</span>], </span><br><span class="line">      dtype=<span class="string">'|S32'</span>)</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>一个包含多个组元的列表,其中形如 (字段名, 类型描<br>述) 的组元描述了结构中的每个字段。类型描述前面为我们添加了 <code>|&#39;,</code>&lt;’ 等字符,这些字符用来描述字段值的字节顺序:<br>. |: 忽视字节顺序<br>. &lt;: 低位字节在前<br>. &gt;: 高位字节在前</p>
+<p>调用a.tostring或a.tofile方法，直接输出数组a得二进制形式<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.tofile(<span class="string">"a.bin"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>可用c读取<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">person</span>&#123;</span></span><br><span class="line">  <span class="keyword">char</span> name[<span class="number">32</span>];</span><br><span class="line">  <span class="keyword">int</span> age;</span><br><span class="line">  <span class="keyword">float</span> weight;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  FILE *fp;</span><br><span class="line">  <span class="keyword">int</span> i;</span><br><span class="line">  fp = fopen(<span class="string">"a.bin"</span>,<span class="string">"rb"</span>);</span><br><span class="line">  fread(p,<span class="keyword">sizeof</span>(struct person),<span class="number">2</span>,fp);</span><br><span class="line">  fclose(fp);</span><br><span class="line">  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s %d %f\n"</span>,p[i].name, p[i].age, p[i].weight);</span><br><span class="line">  getchar();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-ufunc运算"><a href="#3-ufunc运算" class="headerlink" title="3.ufunc运算"></a>3.ufunc运算</h2><p>ufunc 是universal function得缩写，它是一种能对数组的每个元素进行操作得函数(使用c实现)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = np.linspace(<span class="number">0</span>, <span class="number">2</span>*np.pi, <span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = np.sin(x)                    <span class="comment">#np.sin 是一个ufunc函数</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y</span><br><span class="line">array([  <span class="number">0.00000000e+00</span>,   <span class="number">6.42787610e-01</span>,   <span class="number">9.84807753e-01</span>,</span><br><span class="line">         <span class="number">8.66025404e-01</span>,   <span class="number">3.42020143e-01</span>,  <span class="number">-3.42020143e-01</span>,</span><br><span class="line">        <span class="number">-8.66025404e-01</span>,  <span class="number">-9.84807753e-01</span>,  <span class="number">-6.42787610e-01</span>,</span><br><span class="line">        <span class="number">-2.44929360e-16</span>])</span><br></pre></td></tr></table></figure></p>
+<p>先用linspace产生一个从0到2*PI的等距离的10个数,然后将其传递给sin函数,由于np.sin是一个<br>ufunc函数,因此它对x中的每个元素求正弦值,然后将结果返回,并且赋值给y。计算之后x中的值并<br>没有改变,而是新创建了一个数组保存结果。<br>如果希望将sin函数所计算的结果直接覆盖到数组x上去的话,可以将要被覆盖的数组作为第二个参数传递给ufunc函数。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>t = np.sin(x,x)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x</span><br><span class="line">array([  <span class="number">0.00000000e+00</span>,   <span class="number">6.42787610e-01</span>,   <span class="number">9.84807753e-01</span>,</span><br><span class="line">         <span class="number">8.66025404e-01</span>,   <span class="number">3.42020143e-01</span>,  <span class="number">-3.42020143e-01</span>,</span><br><span class="line">        <span class="number">-8.66025404e-01</span>,  <span class="number">-9.84807753e-01</span>,  <span class="number">-6.42787610e-01</span>,</span><br><span class="line">        <span class="number">-2.44929360e-16</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t</span><br><span class="line">array([  <span class="number">0.00000000e+00</span>,   <span class="number">6.42787610e-01</span>,   <span class="number">9.84807753e-01</span>,</span><br><span class="line">         <span class="number">8.66025404e-01</span>,   <span class="number">3.42020143e-01</span>,  <span class="number">-3.42020143e-01</span>,</span><br><span class="line">        <span class="number">-8.66025404e-01</span>,  <span class="number">-9.84807753e-01</span>,  <span class="number">-6.42787610e-01</span>,</span><br><span class="line">        <span class="number">-2.44929360e-16</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(t) == id(x)</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure></p>
+<p>sin函数的第二个参数也是x,那么它所做的事情就是对x中的每给值求正弦值,并且把结果保存到x中的<br>对应的位置中。此时函数的返回值仍然是整个计算的结果,只不过它就是x,因此两个变量的id是相同<br>的(变量t和变量x指向同一块内存区域)。<br>比较numpy.math 和 python得math时间(主要记录下运算时间比较的方法)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = [i * <span class="number">0.001</span> <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">1000000</span>)]</span><br><span class="line">start = time.clock()</span><br><span class="line"><span class="keyword">for</span> i, t <span class="keyword">in</span> enumerate(x):</span><br><span class="line">    x[i] = math.sin(t)      </span><br><span class="line"><span class="keyword">print</span> <span class="string">"math.sin:"</span>, time.clock() - start</span><br><span class="line">x = [i * <span class="number">0.001</span> <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">1000000</span>)]</span><br><span class="line">x = np.array(x)</span><br><span class="line">start = time.clock()</span><br><span class="line">np.sin(x,x)</span><br><span class="line"><span class="keyword">print</span> <span class="string">"numpy.sin:"</span>, time.clock() - start</span><br></pre></td></tr></table></figure></p>
+<p>对单个数的计算math.sin则比numpy.sin快得多了<br>numpy.sin返回的数的类型和math.sin返回的类型有所不同,math.sin返<br>回的是Python的标准float类型,而numpy.sin则返回一个numpy.float64类型<br>在导入时不建议使用*号全部载入,而是应该使用import numpy as np的方式载入,这样可以根据需要选择合适的函数调用</p>
+<p>更多得ufunc函数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = np.arange(<span class="number">0</span>,<span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line">array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = np.arange(<span class="number">1</span>,<span class="number">6</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.add(a,b)</span><br><span class="line">array([<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = np.arange(<span class="number">2</span>,<span class="number">6</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.add(a,c)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError: operands could <span class="keyword">not</span> be broadcast together <span class="keyword">with</span> shapes (<span class="number">5</span>,) (<span class="number">4</span>,)</span><br></pre></td></tr></table></figure></p>
+<p>y = x1 + x2: add(x1, x2 [, y])<br>y = x1 - x2: subtract(x1, x2 [, y])<br>y = x1 * x2: multiply (x1, x2 [, y])<br>y = x1 / x2: divide (x1, x2 [, y]), 如果两个数组的元素为整数,那么用整数除法<br>y = x1 / x2: true divide (x1, x2 [, y]), 总是返回精确的商<br>y = x1 // x2: floor divide (x1, x2 [, y]), 总是对返回值取整<br>y = -x: negative(x [,y])<br>y = x1**x2: power(x1, x2 [, y])<br>y = x1 % x2: remainder(x1, x2 [, y]), mod(x1, x2, [, y])</p>
+<p>通过组合标准的ufunc函数的调用,可以实现各种算式的数组计算。不过有些时候这种算式不易编写,<br>而针对每个元素的计算函数却很容易用Python实现,这时可以用frompyfunc函数将一个计算单个元<br>素的函数转换成ufunc函数。这样就可以方便地用所产生的ufunc函数对数组进行计算了.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">triangle_wave</span><span class="params">(x,c,c0,hc)</span>:</span></span><br><span class="line"><span class="meta">... </span>	x = x - int(x)     <span class="comment">#三角波得周期为1,只取x坐标得小数部分来计算</span></span><br><span class="line"><span class="meta">... </span>	<span class="keyword">if</span> x &gt;= c: r = <span class="number">0.0</span></span><br><span class="line"><span class="meta">... </span>	<span class="keyword">elif</span> x &lt; c0: r = x/c0*hc</span><br><span class="line"><span class="meta">... </span>	<span class="keyword">else</span>: r = (c -x ) / (c - c0) * hc</span><br><span class="line"><span class="meta">... </span>	<span class="keyword">return</span> r</span><br><span class="line"><span class="meta">... </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = np.linspace(<span class="number">0</span>,<span class="number">2</span>, <span class="number">1000</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = np.array([triangle_wave(t, <span class="number">0.6</span>, <span class="number">0.4</span>, <span class="number">1.0</span> ) <span class="keyword">for</span> t <span class="keyword">in</span> x])</span><br></pre></td></tr></table></figure></p>
+<p>再使用frompyfunc函数，解决多维数组的问题<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>triangle_ufunc = np.frompyfunc( <span class="keyword">lambda</span> x: triangle_wave(x, <span class="number">0.6</span>, <span class="number">0.4</span>, <span class="number">1.0</span>), <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y2 = triangle_ufunc(x)</span><br></pre></td></tr></table></figure></p>
+<p>frompyfunc的调用格式为frompyfunc(func, nin, nout),其中func是计算单个元素的函数,nin是此函数的输入参数的个数,nout是此函数的返回值的个数。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">triangle_func</span><span class="params">(c, c0, hc)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">trifunc</span><span class="params">(x)</span>:</span></span><br><span class="line">        x = x - int(x) <span class="comment"># 三角波的周期为1,因此只取x坐标的小数部分进行计算</span></span><br><span class="line">        <span class="keyword">if</span> x &gt;= c: r = <span class="number">0.0</span></span><br><span class="line">        <span class="keyword">elif</span> x &lt; c0: r = x / c0 * hc</span><br><span class="line">        <span class="keyword">else</span>: r = (c-x) / (c-c0) * hc</span><br><span class="line">        <span class="keyword">return</span> r</span><br><span class="line">    <span class="comment"># 用trifunc函数创建一个ufunc函数,可以直接对数组进行计算, 不过通过此函数</span></span><br><span class="line">    <span class="comment"># 计算得到的是一个Object数组,需要进行类型转换</span></span><br><span class="line">    <span class="keyword">return</span> np.frompyfunc(trifunc, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">y2 = triangle_func(<span class="number">0.6</span>, <span class="number">0.4</span>, <span class="number">1.0</span>)(x)</span><br></pre></td></tr></table></figure></p>
+<p>通过函数triangle_func包装三角波的三个参数,在其内部定义一个计算三角波的函数trifunc,trifunc函数在调用时会采用triangle_func的参数进行计算。最后triangle_func返回用frompyfunc转换结果。值得注意的是用frompyfunc得到的函数计算出的数组元素的类型为object,因为frompyfunc函数无法保证Python函数返回的数据类型都完全一致。因此还需要再次 y2.astype(np.float64)将其转换为双精度浮点数组。</p>
+<h2 id="3-2-广播"><a href="#3-2-广播" class="headerlink" title="3.2 广播"></a>3.2 广播</h2>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2015/10/06/2015/slime-lispbuidler/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2015/07/31/2015/checkInet/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpeg" alt="燕君's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        jun1484528313@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/10/">十月 2015<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/07/">七月 2015<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/06/">六月 2015<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Linux-Unix/">Linux/Unix<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/default/">default<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/docs/">docs<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/go/">go<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/javascript/">javascript<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/lisp/">lisp<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/mysql/">mysql<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/python/">python<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/shell/">shell<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/showcase/">showcase<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="关于">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/collection" title="收藏">
+                
+                    <i class="material-icons sidebar-material-icons">bookmark</i>
+                
+                收藏
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/mutou.li.39" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://plus.google.com/106287507544343707828" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;燕君
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

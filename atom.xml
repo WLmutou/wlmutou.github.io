@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>燕君</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://wlmutou.github.io/"/>
+  <updated>2020-04-01T07:34:21.426Z</updated>
+  <id>http://wlmutou.github.io/</id>
+  
+  <author>
+    <name>燕君</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python tkinter显示表格</title>
+    <link href="http://wlmutou.github.io/2020/04/01/2020/python_tkinter_weeibo/"/>
+    <id>http://wlmutou.github.io/2020/04/01/2020/python_tkinter_weeibo/</id>
+    <published>2020-03-31T16:00:00.000Z</published>
+    <updated>2020-04-01T07:34:21.426Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/static/images/2020/weibo_get.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;爬取微博requests，解析用bs4&lt;br&gt;显示，用个tkinter&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://wlmutou.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://wlmutou.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang密码验证合格程序</title>
+    <link href="http://wlmutou.github.io/2020/03/30/2020/20_check_pass/"/>
+    <id>http://wlmutou.github.io/2020/03/30/2020/20_check_pass/</id>
+    <published>2020-03-29T16:00:00.000Z</published>
+    <updated>2020-04-01T07:11:14.741Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;golang密码验证合格程序&lt;/p&gt;
+&lt;h4 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h4&gt;&lt;p&gt;密码要求:&lt;br&gt;1.长度超过8位&lt;br&gt;2.包括大小写字母.数字.其它符号,以上四种至少三种&lt;br&gt;3.不能有相同长度超2的子串重复&lt;br&gt;说明:长度超过2的子串&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/categories/go/"/>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang质数字因子</title>
+    <link href="http://wlmutou.github.io/2020/03/28/2020/6_zhizi/"/>
+    <id>http://wlmutou.github.io/2020/03/28/2020/6_zhizi/</id>
+    <published>2020-03-27T16:00:00.000Z</published>
+    <updated>2020-04-01T07:11:14.741Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;质数分解&lt;/p&gt;
+&lt;h4 id=&quot;质数因子&quot;&gt;&lt;a href=&quot;#质数因子&quot; class=&quot;headerlink&quot; title=&quot;质数因子&quot;&gt;&lt;/a&gt;质数因子&lt;/h4&gt;&lt;p&gt;功能:输入一个正整数，按照从小到大的顺序输出它的所有质因子（如180的质因子为2 2 3 3 5 ）&lt;/p&gt;
+&lt;p&gt;最后一个数后面也要有空格&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/categories/go/"/>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang合并表记录</title>
+    <link href="http://wlmutou.github.io/2020/03/28/2020/8_merge_table/"/>
+    <id>http://wlmutou.github.io/2020/03/28/2020/8_merge_table/</id>
+    <published>2020-03-27T16:00:00.000Z</published>
+    <updated>2020-04-01T07:11:14.741Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/categories/go/"/>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang获取终端输入</title>
+    <link href="http://wlmutou.github.io/2020/03/27/2020/1_2_readinput/"/>
+    <id>http://wlmutou.github.io/2020/03/27/2020/1_2_readinput/</id>
+    <published>2020-03-26T16:00:00.000Z</published>
+    <updated>2020-04-01T07:11:14.741Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;牛客网的机实要写上读取输入&lt;br&gt;golang的输入没有python的方便哟&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/categories/go/"/>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>golang明明的随机数</title>
+    <link href="http://wlmutou.github.io/2020/03/27/2020/3_mingming_rand/"/>
+    <id>http://wlmutou.github.io/2020/03/27/2020/3_mingming_rand/</id>
+    <published>2020-03-26T16:00:00.000Z</published>
+    <updated>2020-04-01T07:11:14.741Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;牛客网华为机实第三题&lt;br&gt;明明的随机数&lt;/p&gt;
+&lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;明明想在学校中请一些同学一起做一项问卷调查，为了实验的客观性，他先用计算机生成了N个1到1000之间的随机整数（N≤1000），对于其中重复的数字，只保留一个，把其余相同的数去掉，不同的数对应着不同的学生的学号。然后再把这些数从小到大排序，按照排好的顺序去找同学做调查。请你协助明明完成“去重”与“排序”的工作(同一个测试用例里可能会有多组数据，希望大家能正确处理)。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/categories/go/"/>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Golang每分钟处理100万请求</title>
+    <link href="http://wlmutou.github.io/2020/02/29/2020/golang_baiwan/"/>
+    <id>http://wlmutou.github.io/2020/02/29/2020/golang_baiwan/</id>
+    <published>2020-02-28T16:00:00.000Z</published>
+    <updated>2020-04-01T07:11:14.741Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;以往，在没有协程概念之气，都是使用线程池。&lt;br&gt;go从语法上来说,本身没有太明显的线程概念。&lt;br&gt;那就使用协程池吧。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/categories/go/"/>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>豆瓣蒸友采集(大型网络相亲现场)</title>
+    <link href="http://wlmutou.github.io/2019/02/21/2019/blind_date/"/>
+    <id>http://wlmutou.github.io/2019/02/21/2019/blind_date/</id>
+    <published>2019-02-20T16:00:00.000Z</published>
+    <updated>2020-04-01T07:11:14.741Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;豆瓣大型网络相亲现场:  &lt;a href=&quot;https://www.douban.com/gallery/topic/51644/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.douban.com/gallery/topic/51644/&lt;/a&gt; ,然而, 却没有地区搜索,关键爱好词搜索….，想想自己吃灰的txCloude和aliyun,ok，那就来个搜索吧&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/categories/go/"/>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>看了流浪地球了</title>
+    <link href="http://wlmutou.github.io/2019/02/09/2019/wandering_earth/"/>
+    <id>http://wlmutou.github.io/2019/02/09/2019/wandering_earth/</id>
+    <published>2019-02-08T16:00:00.000Z</published>
+    <updated>2020-03-01T01:16:22.146Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;年前就开始安利了.终于，把流浪地球看了.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="default" scheme="http://wlmutou.github.io/categories/default/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>2019除夕夜晚</title>
+    <link href="http://wlmutou.github.io/2019/02/04/2019/2019_new_year_eve/"/>
+    <id>http://wlmutou.github.io/2019/02/04/2019/2019_new_year_eve/</id>
+    <published>2019-02-03T16:00:00.000Z</published>
+    <updated>2020-03-01T01:25:52.338Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;又是一年万家灯火除夕夜,又是一载漫天烟火绽放时.&lt;br&gt;离去又回来，回来又离去.年复一年,新房年年过后也会老.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="default" scheme="http://wlmutou.github.io/categories/default/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>go的一些xxxx</title>
+    <link href="http://wlmutou.github.io/2019/01/31/2019/golang_interface/"/>
+    <id>http://wlmutou.github.io/2019/01/31/2019/golang_interface/</id>
+    <published>2019-01-30T16:00:00.000Z</published>
+    <updated>2020-04-01T07:11:14.741Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最习惯的使用interface 可能就是任意参数类型吧.然而，interface使用还可以有很多方式哟.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/categories/go/"/>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://wlmutou.github.io/2019/01/29/2019/life_tody/"/>
+    <id>http://wlmutou.github.io/2019/01/29/2019/life_tody/</id>
+    <published>2019-01-28T16:00:00.000Z</published>
+    <updated>2020-03-01T01:16:22.146Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;又是一年啦。人生苦短呐,又涨一岁啦…&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="default" scheme="http://wlmutou.github.io/categories/default/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>go select并发</title>
+    <link href="http://wlmutou.github.io/2018/05/30/2018/goroutime_bingfa/"/>
+    <id>http://wlmutou.github.io/2018/05/30/2018/goroutime_bingfa/</id>
+    <published>2018-05-29T16:00:00.000Z</published>
+    <updated>2020-04-01T07:11:14.741Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有没有这样的需求，需要起多个线程，然后，只有一个目标之后，才停止所有线程&lt;/p&gt;
+&lt;p&gt;go代码&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/categories/go/"/>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Go限制IP频繁哪访问面试题</title>
+    <link href="http://wlmutou.github.io/2018/05/29/2018/go_interview/"/>
+    <id>http://wlmutou.github.io/2018/05/29/2018/go_interview/</id>
+    <published>2018-05-28T16:00:00.000Z</published>
+    <updated>2020-04-01T07:11:14.741Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;场景：在一个高并发的web服务器中，要限制IP的频繁访问。&lt;br&gt;现模拟100个IP同时并发访问服务器，每个IP要重复访问1000次。&lt;br&gt;每个IP三分钟之内只能访问一次。修改以下代码完成该过程，要求能成功输出 success:100&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/categories/go/"/>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>追溯深度学习的历史</title>
+    <link href="http://wlmutou.github.io/2018/05/24/2018/deep_learning_about/"/>
+    <id>http://wlmutou.github.io/2018/05/24/2018/deep_learning_about/</id>
+    <published>2018-05-23T16:00:00.000Z</published>
+    <updated>2020-04-01T07:11:14.741Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;最小二乘法&quot;&gt;&lt;a href=&quot;#最小二乘法&quot; class=&quot;headerlink&quot; title=&quot;最小二乘法&quot;&gt;&lt;/a&gt;最小二乘法&lt;/h1&gt;&lt;pre class=&quot; language-python&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://wlmutou.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://wlmutou.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python实现一个优先级队列</title>
+    <link href="http://wlmutou.github.io/2018/05/23/2018/python_deque/"/>
+    <id>http://wlmutou.github.io/2018/05/23/2018/python_deque/</id>
+    <published>2018-05-22T16:00:00.000Z</published>
+    <updated>2020-04-01T07:11:14.741Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在迭代操作或者其他操作的时候，怎样只保留最后有限几个元素的历史记录？&lt;br&gt;保留有限历史记录应该用下 collections.deque&lt;br&gt;使用 deque(maxlen=N) 构造函数会新建一个固定大小的队列。当新的元素加入并且这个队列已满的时候， 最老的元素会自动被移除掉。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;python3&quot;&gt;In [1]: from collections import deque
+
+In [2]: q = deque(maxlen=3)
+
+In [3]: q.append(1)
+
+In [4]: q.append(2)
+
+In [5]: q.append(3)
+
+In [6]: q
+Out[6]: deque([1, 2, 3])
+
+In [7]: q.append(4)
+
+In [8]: q
+Out[8]: deque([2, 3, 4])
+
+In [9]: q.append(5)
+
+In [10]: q
+Out[10]: deque([3, 4, 5])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;更一般的， deque 类可以被用在任何你只需要一个简单队列数据结构的场合。 如果你不设置最大队列大小，那么就会得到一个无限大小队列，你可以在队列的两端执行添加和弹出元素的操作。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;python3&quot;&gt;&amp;gt;&amp;gt;&amp;gt; q = deque()
+&amp;gt;&amp;gt;&amp;gt; q.append(1)
+&amp;gt;&amp;gt;&amp;gt; q.append(2)
+&amp;gt;&amp;gt;&amp;gt; q.append(3)
+&amp;gt;&amp;gt;&amp;gt; q
+deque([1, 2, 3])
+&amp;gt;&amp;gt;&amp;gt; q.appendleft(4)
+&amp;gt;&amp;gt;&amp;gt; q
+deque([4, 1, 2, 3])
+&amp;gt;&amp;gt;&amp;gt; q.pop()
+3
+&amp;gt;&amp;gt;&amp;gt; q
+deque([4, 1, 2])
+&amp;gt;&amp;gt;&amp;gt; q.popleft()
+4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在队列两端插入或删除元素时间复杂度都是 O(1) ，区别于列表，在列表的开头插入或删除元素的时间复杂度为 O(N) 。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://wlmutou.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://wlmutou.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nginx之configure</title>
+    <link href="http://wlmutou.github.io/2018/05/23/2018/nginx_config/"/>
+    <id>http://wlmutou.github.io/2018/05/23/2018/nginx_config/</id>
+    <published>2018-05-22T16:00:00.000Z</published>
+    <updated>2020-04-01T07:11:14.741Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;configure 做检测操作系统内核和已安装的软件，参数解析,中间目录的生成以及&lt;br&gt;根据各种参数生成一些C源码文件、Makefile文件等。&lt;br&gt;查看configure如何工作，也可以看出Nginx的一些设计思想&lt;br&gt;以及，shell脚本这样写，清晰明了。&lt;/p&gt;
+&lt;p&gt;查看参数&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;./configure --help
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux/Unix" scheme="http://wlmutou.github.io/categories/Linux-Unix/"/>
+    
+    
+      <category term="nginx" scheme="http://wlmutou.github.io/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>红黑树</title>
+    <link href="http://wlmutou.github.io/2018/05/23/2018/red_black_tree/"/>
+    <id>http://wlmutou.github.io/2018/05/23/2018/red_black_tree/</id>
+    <published>2018-05-22T16:00:00.000Z</published>
+    <updated>2020-03-01T01:16:22.146Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;nginx红黑树&lt;/p&gt;
+&lt;p&gt;红黑树的每个节点上都有存储位表示节点的颜色，颜色是红(Red)或黑(Black)。&lt;br&gt;红黑树的特性:&lt;br&gt;(1) 每个节点或者是黑色，或者是红色。&lt;br&gt;(2) 根节点是黑色。&lt;br&gt;(3) 每个叶子节点是黑色。 [注意：这里叶子节点，是指为空的叶子节点！]&lt;br&gt;(4) 如果一个节点是红色的，则它的子节点必须是黑色的。&lt;br&gt;(5) 从一个节点到该节点的子孙节点的所有路径上包含相同数目的黑节点。&lt;/p&gt;
+&lt;p&gt;关于它的特性，需要注意的是：&lt;br&gt;第一，特性(3)中的叶子节点，是只为空(NIL或null)的节点。&lt;br&gt;第二，特性(5)，确保没有一条路径会比其他路径长出俩倍。因而，红黑树是相对是接近平衡的二叉树。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux/Unix" scheme="http://wlmutou.github.io/categories/Linux-Unix/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vue.js/reactjs下载文件</title>
+    <link href="http://wlmutou.github.io/2018/05/21/2018/js_download_file/"/>
+    <id>http://wlmutou.github.io/2018/05/21/2018/js_download_file/</id>
+    <published>2018-05-20T16:00:00.000Z</published>
+    <updated>2020-04-01T07:11:14.741Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;vue.js, reactjs 一般，使用js来下载文件。&lt;br&gt;而，后段一般返回数据流。&lt;br&gt;这时候，IE用Blob处理，chrome创建个超连接来处理.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://wlmutou.github.io/categories/javascript/"/>
+    
+    
+      <category term="js" scheme="http://wlmutou.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>go 自动补全出现gocode panic</title>
+    <link href="http://wlmutou.github.io/2018/05/05/2018/gocode_panic/"/>
+    <id>http://wlmutou.github.io/2018/05/05/2018/gocode_panic/</id>
+    <published>2018-05-04T16:00:00.000Z</published>
+    <updated>2020-04-01T07:11:14.741Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;自己用的电脑，装的是go1.8。然而办公的装了go1.9&lt;br&gt;今天突然想升级下。&lt;/p&gt;
+&lt;p&gt;把go1.9下回来,把go1.8备份下&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$sudo mv /usr/local/go /usr/local/go_1.8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;解压到/usr/local/go&lt;br&gt;然后把 go_1.8/bin/目录下的之前安装的软件，cp回go1.9的目录下&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ cp /usr/local/go_1.8/bin/gocode /usr/local/go/bin/gocde
+$ cp /usr/local/go_1.8/bin/godep /usr/local/go/bin/godep
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其他不变。&lt;br&gt;再编辑代码的时候，发现不能补全了。&lt;/p&gt;
+&lt;p&gt;提示类似:&lt;br&gt;gocode panic. Please check you code by &lt;code&gt;go build&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/categories/go/"/>
+    
+    
+      <category term="go" scheme="http://wlmutou.github.io/tags/go/"/>
+    
+  </entry>
+  
+</feed>

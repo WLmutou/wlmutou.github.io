@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="go select并发, 燕君">
+    <meta name="keywords" content="pyppeteer安装chromium, 燕君">
     <meta name="description" content="燕君">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>go select并发 | 燕君</title>
+    <title>pyppeteer安装chromium | 燕君</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -200,12 +200,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">go select并发</h1>
+                    <h1 class="description center-align post-title">pyppeteer安装chromium</h1>
                 </div>
             </div>
         </div>
@@ -322,8 +322,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/go/">
-                                <span class="chip bg-color">go</span>
+                            <a href="/tags/pyppetter/">
+                                <span class="chip bg-color">pyppetter</span>
                             </a>
                         
                     </div>
@@ -334,8 +334,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/go/" class="post-category">
-                                go
+                            <a href="/categories/python/" class="post-category">
+                                python
                             </a>
                         
                     </div>
@@ -347,7 +347,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-05-30
+                    2020-04-04
                 </div>
                 
 
@@ -364,51 +364,77 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>有没有这样的需求，需要起多个线程，然后，只有一个目标之后，才停止所有线程</p>
-<p>go代码</p>
-<a id="more"></a>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+                <p>selenium,有时候会有许多缺点.有些网页是可以检测到是否是使用了selenium.不允许跨域 cookies 保存以及登录的时候必须先打开网页然后后加载cookies(经常遇到unable to set cookie)<br>还可以pyppeteer爬虫(用过都说好)<br><a id="more"></a></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># pip install pyppeteer</span>
+</code></pre>
+<p>写个测试例子</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python3</span>
+<span class="token comment" spellcheck="true"># encoding:utf-8</span>
 
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-    <span class="token string">"fmt"</span>
-    <span class="token string">"runtime"</span>
-    <span class="token string">"time"</span>
-<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">## helloword.py</span>
 
-<span class="token keyword">var</span> n <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">import</span> asyncio
+<span class="token keyword">from</span> pyppeteer <span class="token keyword">import</span> launch
 
-<span class="token keyword">func</span> <span class="token function">runTine</span><span class="token punctuation">(</span>quit <span class="token keyword">chan</span> <span class="token builtin">bool</span><span class="token punctuation">,</span> i <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">for</span> <span class="token punctuation">{</span>
-        <span class="token keyword">select</span> <span class="token punctuation">{</span>
-        <span class="token keyword">case</span> <span class="token operator">&lt;-</span>quit<span class="token punctuation">:</span>
-            fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"quit"</span><span class="token punctuation">)</span>
-            fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
-            fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>runtime<span class="token punctuation">.</span><span class="token function">NumGoroutine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//num of goroutine</span>
-            <span class="token keyword">return</span>
-        <span class="token keyword">default</span><span class="token punctuation">:</span>
-            n <span class="token operator">+=</span> <span class="token number">1</span>
-            fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"run run ..."</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    quit <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token builtin">bool</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
-        <span class="token keyword">go</span> <span class="token function">runTine</span><span class="token punctuation">(</span>quit<span class="token punctuation">,</span> i<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
+url <span class="token operator">=</span> <span class="token string">"http://www.baidu.com"</span>
 
-    <span class="token keyword">for</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> n <span class="token operator">&gt;</span> <span class="token number">50000</span> <span class="token punctuation">{</span>
-            quit <span class="token operator">&lt;-</span> <span class="token boolean">true</span>
-            <span class="token keyword">break</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
+window_width <span class="token operator">=</span> <span class="token number">1366</span>   <span class="token comment" spellcheck="true">#设置浏览器宽度</span>
+window_height <span class="token operator">=</span> <span class="token number">850</span>   <span class="token comment" spellcheck="true">#设置浏览器高度, 否则会看不全页面</span>
 
-<span class="token punctuation">}</span>
 
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    br <span class="token operator">=</span> <span class="token keyword">await</span> launch<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'dumpio'</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span> 
+        <span class="token string">'autoClose'</span><span class="token punctuation">:</span> <span class="token boolean">False</span><span class="token punctuation">,</span> 
+        <span class="token string">'args'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token string">'--no-sandbox'</span><span class="token punctuation">,</span> 
+            <span class="token string">'--window-size=%s,%s'</span> <span class="token operator">%</span><span class="token punctuation">(</span>window_width<span class="token punctuation">,</span> window_height<span class="token punctuation">)</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    page <span class="token operator">=</span> <span class="token keyword">await</span> br<span class="token punctuation">.</span>newPage<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> page<span class="token punctuation">.</span>goto<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    <span class="token keyword">await</span> page<span class="token punctuation">.</span>setViewport<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'width'</span><span class="token punctuation">:</span> window_width<span class="token punctuation">,</span> <span class="token string">'height'</span><span class="token punctuation">:</span> window_height<span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">await</span> page<span class="token punctuation">.</span>screenshot<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"path"</span><span class="token punctuation">:</span><span class="token string">"baidu.png"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># print (await page.content()) #获取网页源码</span>
+    <span class="token keyword">await</span> br<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+asyncio<span class="token punctuation">.</span>get_event_loop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>run_until_complete<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+</code></pre>
+<p>这个时候，会出现</p>
+<pre class=" language-bash"><code class="language-bash">wood@pyppeteer$ python3 helloword.py 
+<span class="token punctuation">[</span>W:pyppeteer.chromium_downloader<span class="token punctuation">]</span> start chromium download.
+Download may take a few minutes.
+  0%<span class="token operator">|</span>                                                                             <span class="token operator">|</span> 10240/106826418 <span class="token punctuation">[</span>00:00<span class="token operator">&lt;</span>1:48:17, 16439.78it/s<span class="token punctuation">]</span>
+
+</code></pre>
+<p>直接系统安装chromium? 事实证明不行.</p>
+<h3 id="安装chromium"><a href="#安装chromium" class="headerlink" title="安装chromium"></a>安装chromium</h3><ol>
+<li>使用pyppeteer-install，这个跟上面一样</li>
+</ol>
+<pre class=" language-bash"><code class="language-bash">wood@pyppeteer$ pyppeteer-install 
+<span class="token punctuation">[</span>W:pyppeteer.chromium_downloader<span class="token punctuation">]</span> start chromium download.
+
+</code></pre>
+<ol start="2">
+<li>手动下载到指定目录</li>
+</ol>
+<p>直接下载chrome-linux.zip 到 ~/.local/share/pyppeteer 不行哟<br>写个脚本</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!/usr/bin/env python3</span>
+<span class="token comment" spellcheck="true"># encoding:utf-8</span>
+<span class="token keyword">import</span> pyppeteer<span class="token punctuation">.</span>chromium_downloader
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'默认版本是：{}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>pyppeteer<span class="token punctuation">.</span>__chromium_revision__<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'可执行文件默认路径：{}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>pyppeteer<span class="token punctuation">.</span>chromium_downloader<span class="token punctuation">.</span>chromiumExecutable<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"="</span><span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'linux平台下载链接为：{}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>pyppeteer<span class="token punctuation">.</span>chromium_downloader<span class="token punctuation">.</span>downloadURLs<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'linux'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'win64平台下载链接为：{}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>pyppeteer<span class="token punctuation">.</span>chromium_downloader<span class="token punctuation">.</span>downloadURLs<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'win64'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>可以看到,执行的路径，以及下载地址都有了.<br>pyppeteer chromium路径要加上版本号</p>
+<pre class=" language-bash"><code class="language-bash">默认版本是：575458
+可执行文件默认路径：<span class="token punctuation">{</span><span class="token string">'linux'</span><span class="token keyword">:</span> PosixPath<span class="token punctuation">(</span><span class="token string">'/home/wood/.local/share/pyppeteer/local-chromium/575458/chrome-linux/chrome'</span><span class="token punctuation">)</span>, <span class="token string">'mac'</span><span class="token keyword">:</span> PosixPath<span class="token punctuation">(</span><span class="token string">'/home/wood/.local/share/pyppeteer/local-chromium/575458/chrome-mac/Chromium.app/Contents/MacOS/Chromium'</span><span class="token punctuation">)</span>, <span class="token string">'win32'</span><span class="token keyword">:</span> PosixPath<span class="token punctuation">(</span><span class="token string">'/home/wood/.local/share/pyppeteer/local-chromium/575458/chrome-win32/chrome.exe'</span><span class="token punctuation">)</span>, <span class="token string">'win64'</span><span class="token keyword">:</span> PosixPath<span class="token punctuation">(</span><span class="token string">'/home/wood/.local/share/pyppeteer/local-chromium/575458/chrome-win32/chrome.exe'</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
+linux平台下载链接为：https://storage.googleapis.com/chromium-browser-snapshots/Linux_x64/575458/chrome-linux.zip
+win64平台下载链接为：https://storage.googleapis.com/chromium-browser-snapshots/Win_x64/575458/chrome-win32.zip
 </code></pre>
 <!-- zh-CN:- -->
 <script>
@@ -454,7 +480,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://wlmutou.github.io/2018/05/30/2018/goroutime_bingfa/">http://wlmutou.github.io/2018/05/30/2018/goroutime_bingfa/</a>
+                    <a href="http://wlmutou.github.io/2020/04/04/2020/pyppeteer_chromium/">http://wlmutou.github.io/2020/04/04/2020/pyppeteer_chromium/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -492,8 +518,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/go/">
-                                    <span class="chip bg-color">go</span>
+                                <a href="/tags/pyppetter/">
+                                    <span class="chip bg-color">pyppetter</span>
                                 </a>
                             
                         </div>
@@ -534,48 +560,50 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/01/29/2019/life_tody/">
+                <a href="/2020/04/04/2020/pyppeteer_chromium/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="pyppeteer安装chromium">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">pyppeteer安装chromium</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            又是一年啦。人生苦短呐,又涨一岁啦…
-
-body内容内容
-
-
-
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-          
+                            selenium,有时候会有许多缺点.有些网页是可以检测到是否是使用了selenium.不允许跨域 cookies 保存以及登录的时候必须先打开网页然后后加载cookies(经常遇到unable to set cookie)还可以pyppe
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-01-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/default/" class="post-category">
-                                    default
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/pyppetter/">
+                        <span class="chip bg-color">pyppetter</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -587,34 +615,34 @@ body内容内容
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/05/29/2018/go_interview/">
+                <a href="/2020/04/01/2020/python_tkinter_weeibo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Go限制IP频繁哪访问面试题">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="python tkinter显示表格">
                         
-                        <span class="card-title">Go限制IP频繁哪访问面试题</span>
+                        <span class="card-title">python tkinter显示表格</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            场景：在一个高并发的web服务器中，要限制IP的频繁访问。现模拟100个IP同时并发访问服务器，每个IP要重复访问1000次。每个IP三分钟之内只能访问一次。修改以下代码完成该过程，要求能成功输出 success:100
-
-原题目代码:
-p
+                            
+爬取微博requests，解析用bs4显示，用个tkinter主要几个字段: [“微博id”, “微博正文”,”评论数”, “转发数”, “点赞数”, “发布时间”]
+获取搜索先用requests获取搜索结果
+#!/usr/bin/env
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-05-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/go/" class="post-category">
-                                    go
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
@@ -624,8 +652,8 @@ p
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/go/">
-                        <span class="chip bg-color">go</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>

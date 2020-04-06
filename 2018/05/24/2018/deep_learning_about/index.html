@@ -440,7 +440,7 @@ num_iterations <span class="token operator">=</span> <span class="token number">
 <span class="token keyword">for</span> x<span class="token punctuation">,</span> _ <span class="token keyword">in</span> training_data<span class="token punctuation">:</span>
 
     result <span class="token operator">=</span> dot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> weights<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{}: {} -> {}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>input<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> result<span class="token punctuation">,</span> one_or_zero<span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{}: {} -&gt; {}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>input<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> result<span class="token punctuation">,</span> one_or_zero<span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre>
 <h1 id="人工神经网络"><a href="#人工神经网络" class="headerlink" title="人工神经网络"></a>人工神经网络</h1><p>“””<br>我们描述了一种新的类神经元网络学习过程——反向传播。该过程通过反复调整网络中的连接权重，最小化网络的实际输出向量与期望输出向量之间的差异。<br>调整权重的结果就是，不属于输入或输出的内部“隐藏”单元成为了描述任务域的重要特征，并且这些单元的交互项还捕获了任务中的正则条件。<br>相较于早期更简单的方法，如“感知机收敛过程” Nature 323, 533 – 536 (09 October 1986)，反向传播可以创造出有用的新特征。<br>“””</p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
@@ -652,19 +652,19 @@ p
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/05/23/2018/nginx_config/">
+                <a href="/2018/05/23/2018/python_deque/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="nginx之configure">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="python实现一个优先级队列">
                         
-                        <span class="card-title">nginx之configure</span>
+                        <span class="card-title">python实现一个优先级队列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            configure 做检测操作系统内核和已安装的软件，参数解析,中间目录的生成以及根据各种参数生成一些C源码文件、Makefile文件等。查看configure如何工作，也可以看出Nginx的一些设计思想以及，shell脚本这样写，清晰明了
+                            在迭代操作或者其他操作的时候，怎样只保留最后有限几个元素的历史记录？保留有限历史记录应该用下 collections.deque使用 deque(maxlen=N) 构造函数会新建一个固定大小的队列。当新的元素加入并且这个队列已满的时候， 
                         
                     </div>
                     <div class="publish-info">
@@ -675,8 +675,8 @@ p
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux-Unix/" class="post-category">
-                                    Linux/Unix
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
@@ -686,8 +686,8 @@ p
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/nginx/">
-                        <span class="chip bg-color">nginx</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>

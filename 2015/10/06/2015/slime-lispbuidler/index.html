@@ -369,23 +369,23 @@
 #sudo aptitude isntall libsdl-gfx1.2-dev  ;;
 </code></pre>
 <p>然后，用ee发来得那个quicklisp里面，</p>
-<pre class=" language-lisp"><code class="language-lisp">cl-user>(load "~/quicklisp/setup.lisp")
-cl-user>(quicklisp-quickstart:install)
-cl-user>(ql:add-to-init-file)
+<pre class=" language-lisp"><code class="language-lisp">cl-user&gt;(load "~/quicklisp/setup.lisp")
+cl-user&gt;(quicklisp-quickstart:install)
+cl-user&gt;(ql:add-to-init-file)
 
-cl-user>(ASDF:OPERATE 'ASDF:LOAD-OP :lispbuilder-sdl)
-cl-user>(asdf:operate 'asdf:load-op :lispbuilder-sdl-gfx)
-cl-user>(asdf:operate 'asdf:load-op :lispbuilder-sdl-mixer)
-cl-user>(asdf:operate 'asdf:load-op :lispbuilder-sdl-image)
-cl-user>(asdf:operate 'asdf:load-op :lispbuilder-sdl-ttf)
-cl-user>(asdf:operate 'asdf:load-op :lispbuilder-sdl-examples)
+cl-user&gt;(ASDF:OPERATE 'ASDF:LOAD-OP :lispbuilder-sdl)
+cl-user&gt;(asdf:operate 'asdf:load-op :lispbuilder-sdl-gfx)
+cl-user&gt;(asdf:operate 'asdf:load-op :lispbuilder-sdl-mixer)
+cl-user&gt;(asdf:operate 'asdf:load-op :lispbuilder-sdl-image)
+cl-user&gt;(asdf:operate 'asdf:load-op :lispbuilder-sdl-ttf)
+cl-user&gt;(asdf:operate 'asdf:load-op :lispbuilder-sdl-examples)
 </code></pre>
 <p>一个实例</p>
-<pre class=" language-lisp"><code class="language-lisp">cl-user>(sdl-examples:fireworks)
+<pre class=" language-lisp"><code class="language-lisp">cl-user&gt;(sdl-examples:fireworks)
 </code></pre>
 <p>或者，可以把lispbuilder下载，clone 这个 <a href="https://github.com/lispbuilder/lispbuilder.git" target="_blank" rel="noopener">https://github.com/lispbuilder/lispbuilder.git</a> ，下载后，一个一个添加进去，具体看lispbuilder的文档吧…</p>
-<pre class=" language-lisp"><code class="language-lisp">cl-user>(pushnew "~/path/to/lispbuilder/lispbuilder-sdl" asdf:*central-registry* :test #'equal)
-cl-user>(asdf:operate 'asdf:load-op :lispbuilder-sdl)
+<pre class=" language-lisp"><code class="language-lisp">cl-user&gt;(pushnew "~/path/to/lispbuilder/lispbuilder-sdl" asdf:*central-registry* :test #'equal)
+cl-user&gt;(asdf:operate 'asdf:load-op :lispbuilder-sdl)
 </code></pre>
 <p>或者，(这个暂时没有尝试过,意思嘛，大家都明白的)</p>
 <pre class=" language-lisp"><code class="language-lisp">(require :asdf)
@@ -519,27 +519,21 @@ cl-user>(asdf:operate 'asdf:load-op :lispbuilder-sdl)
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2016/10/19/2017/python-search-img/">
+                <a href="/2016/10/19/2016/style-examples/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="python图片中寻找目标">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Style examples">
                         
-                        <span class="card-title">python图片中寻找目标</span>
+                        <span class="card-title">Style examples</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            python 使用openCV查找图片中的目标
+                              This post supports multiple languages, please switch to another language to view it.  
 
-使用模板匹配在一幅图像中查找目标
-
-函数:cv2.matchTemplate(),cv2.minMaxLoc()
-
-
-
-模板匹配是用来在一副大图中搜寻查找模版图像位置的方法。OpenCV 为
+HeadingsH1 - Heading level 1H2
                         
                     </div>
                     <div class="publish-info">
@@ -550,8 +544,8 @@ cl-user>(asdf:operate 'asdf:load-op :lispbuilder-sdl)
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/showcase/" class="post-category">
+                                    showcase
                                 </a>
                             
                             
@@ -582,7 +576,7 @@ cl-user>(asdf:operate 'asdf:load-op :lispbuilder-sdl)
                         
                             长假，长假？放那么长的假干嘛？哎，我们应该努力工作，努力挣钱…好吧，没事，就接续看看大蟒蛇科学计算吧。。。:)(:….
 1.1 创建通过给array函数传递Python的序列对象创建数组,如果传递的是多层嵌套的序列,将创建多维数组:
->>>
+&gt
                         
                     </div>
                     <div class="publish-info">

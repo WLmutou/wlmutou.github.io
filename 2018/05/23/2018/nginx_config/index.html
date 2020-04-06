@@ -418,8 +418,8 @@
 <p>ngx_modules.c文件就是用来定义ngx_modules数组的。<br>ngx_modules是非常关键的数组,它指明了每个模块在Nginx中的优先级,当一个请求同时符合多个模块的处理规则时因此,ngx_modules中模块的先后顺序非常重要,不正确的顺序会导致Nginx无法工作,这是auto/modules脚本执行后的</p>
 <pre class=" language-c"><code class="language-c">
 
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;ngx_config.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;ngx_core.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;ngx_config.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;ngx_core.h&gt;</span></span>
 
 
 
@@ -644,26 +644,24 @@ ngx_module_t <span class="token operator">*</span>ngx_modules<span class="token 
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/05/24/2018/deep_learning_about/">
+                <a href="/2018/05/23/2018/python_deque/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="追溯深度学习的历史">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="python实现一个优先级队列">
                         
-                        <span class="card-title">追溯深度学习的历史</span>
+                        <span class="card-title">python实现一个优先级队列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最小二乘法def compute_error_for_line_given_points(b, m, coordinates):
-    totalError = 0
-    for i in range(0, len(coordinate
+                            在迭代操作或者其他操作的时候，怎样只保留最后有限几个元素的历史记录？保留有限历史记录应该用下 collections.deque使用 deque(maxlen=N) 构造函数会新建一个固定大小的队列。当新的元素加入并且这个队列已满的时候， 
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2018-05-24
+                            <i class="far fa-clock fa-fw icon-date"></i>2018-05-23
                         </span>
                         <span class="publish-author">
                             
@@ -695,19 +693,20 @@ ngx_module_t <span class="token operator">*</span>ngx_modules<span class="token 
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/05/23/2018/python_deque/">
+                <a href="/2018/05/23/2018/red_black_tree/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="python实现一个优先级队列">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="红黑树">
                         
-                        <span class="card-title">python实现一个优先级队列</span>
+                        <span class="card-title">红黑树</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在迭代操作或者其他操作的时候，怎样只保留最后有限几个元素的历史记录？保留有限历史记录应该用下 collections.deque使用 deque(maxlen=N) 构造函数会新建一个固定大小的队列。当新的元素加入并且这个队列已满的时候， 
+                            nginx红黑树
+红黑树的每个节点上都有存储位表示节点的颜色，颜色是红(Red)或黑(Black)。红黑树的特性:(1) 每个节点或者是黑色，或者是红色。(2) 根节点是黑色。(3) 每个叶子节点是黑色。 [注意：这里叶子节点，是指为空的叶
                         
                     </div>
                     <div class="publish-info">
@@ -718,21 +717,13 @@ ngx_module_t <span class="token operator">*</span>ngx_modules<span class="token 
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/Linux-Unix/" class="post-category">
+                                    Linux/Unix
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
-                    </a>
-                    
                 </div>
                 
             </div>

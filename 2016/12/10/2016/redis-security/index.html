@@ -365,56 +365,56 @@
 <p>redis，刚开始在线上运用的时候，就会有好多问题没有注意到。很容易，给漏出问题。让人有机会搞到shell。</p>
 <pre class=" language-bash"><code class="language-bash">xxx@debian:~/bash$ redis-cli -h 47.89.xx.xx  -p 6379
 
-47.89.xx.xx:6379<span class="token operator">></span> 
+47.89.xx.xx:6379<span class="token operator">&gt;</span> 
 
-47.89.xx.xx:6379<span class="token operator">></span> 
+47.89.xx.xx:6379<span class="token operator">&gt;</span> 
 
-47.89.xx.xx:6379<span class="token operator">></span> <span class="token function">ls</span>
+47.89.xx.xx:6379<span class="token operator">&gt;</span> <span class="token function">ls</span>
 
 <span class="token punctuation">(</span>error<span class="token punctuation">)</span> ERR unknown <span class="token function">command</span> <span class="token string">'ls'</span>
 
-47.89.xx.xx:6379<span class="token operator">></span> config <span class="token keyword">set</span> <span class="token function">dir</span> /root/.ssh/
+47.89.xx.xx:6379<span class="token operator">&gt;</span> config <span class="token keyword">set</span> <span class="token function">dir</span> /root/.ssh/
 
 <span class="token punctuation">(</span>error<span class="token punctuation">)</span> ERR Changing directory: Permission denied
 
-47.89.xx.xx:6379<span class="token operator">></span> config <span class="token keyword">set</span> <span class="token function">dir</span> <span class="token keyword">.</span>
+47.89.xx.xx:6379<span class="token operator">&gt;</span> config <span class="token keyword">set</span> <span class="token function">dir</span> <span class="token keyword">.</span>
 
 OK
 
-47.89.xx.xx:6379<span class="token operator">></span> config <span class="token keyword">set</span> <span class="token function">dir</span> ~/.sh/
+47.89.xx.xx:6379<span class="token operator">&gt;</span> config <span class="token keyword">set</span> <span class="token function">dir</span> ~/.sh/
 
 <span class="token punctuation">(</span>error<span class="token punctuation">)</span> ERR Changing directory: No such <span class="token function">file</span> or directory
 
-47.89.xx.xx:6379<span class="token operator">></span> config <span class="token keyword">set</span> <span class="token function">dir</span> ~/.ssh/
+47.89.xx.xx:6379<span class="token operator">&gt;</span> config <span class="token keyword">set</span> <span class="token function">dir</span> ~/.ssh/
 
 <span class="token punctuation">(</span>error<span class="token punctuation">)</span> ERR Changing directory: No such <span class="token function">file</span> or directory
 
-47.89.xx.xx:6379<span class="token operator">></span> config <span class="token keyword">set</span> <span class="token function">dir</span> <span class="token keyword">.</span>
+47.89.xx.xx:6379<span class="token operator">&gt;</span> config <span class="token keyword">set</span> <span class="token function">dir</span> <span class="token keyword">.</span>
 
 OK
 
-47.89.xx.xx:6379<span class="token operator">></span> config <span class="token keyword">set</span> dbfilename authorized_keys
+47.89.xx.xx:6379<span class="token operator">&gt;</span> config <span class="token keyword">set</span> dbfilename authorized_keys
 
 OK
 
-47.89.xx.xx:6379<span class="token operator">></span> <span class="token keyword">set</span> xxx <span class="token string">"\n\n\nssh-rsa zzzzzzzzzzzzzzzzzzzzzz\n\n\n"</span>
+47.89.xx.xx:6379<span class="token operator">&gt;</span> <span class="token keyword">set</span> xxx <span class="token string">"\n\n\nssh-rsa zzzzzzzzzzzzzzzzzzzzzz\n\n\n"</span>
 
 OK 
 
-47.89.xx.xx:6379<span class="token operator">></span> save
+47.89.xx.xx:6379<span class="token operator">&gt;</span> save
 
-47.89.xx.xx:6379<span class="token operator">></span> config <span class="token keyword">set</span> <span class="token function">dir</span> /home/wwwroot/default/
+47.89.xx.xx:6379<span class="token operator">&gt;</span> config <span class="token keyword">set</span> <span class="token function">dir</span> /home/wwwroot/default/
 <span class="token punctuation">(</span>error<span class="token punctuation">)</span> ERR Changing directory: No such <span class="token function">file</span> or directory
 OK
-47.89.xx.xx:6379<span class="token operator">></span> config <span class="token keyword">set</span> <span class="token function">dir</span> /home/seller_center/
+47.89.xx.xx:6379<span class="token operator">&gt;</span> config <span class="token keyword">set</span> <span class="token function">dir</span> /home/seller_center/
 OK
-47.89.xx.xx:6379<span class="token operator">></span> config <span class="token keyword">set</span> dbfilename authorized_keys
+47.89.xx.xx:6379<span class="token operator">&gt;</span> config <span class="token keyword">set</span> dbfilename authorized_keys
 OK
-47.89.xx.xx:6379<span class="token operator">></span> <span class="token keyword">set</span> xxx <span class="token string">"\n\n\nssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC4+kLQi93luRmXe4a9zR9iaqKrwuzKdSWjWmrkVP68cEdFfeDhrPTPQJq3VHGu9J4NrS8eSJwiPHJGUfy8VIe4W\n\n\n"</span>
+47.89.xx.xx:6379<span class="token operator">&gt;</span> <span class="token keyword">set</span> xxx <span class="token string">"\n\n\nssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC4+kLQi93luRmXe4a9zR9iaqKrwuzKdSWjWmrkVP68cEdFfeDhrPTPQJq3VHGu9J4NrS8eSJwiPHJGUfy8VIe4W\n\n\n"</span>
 OK
-47.89.xx.xx:6379<span class="token operator">></span> save
+47.89.xx.xx:6379<span class="token operator">&gt;</span> save
 OK
-47.89.xx.xx:6379<span class="token operator">></span> <span class="token keyword">exit</span>
+47.89.xx.xx:6379<span class="token operator">&gt;</span> <span class="token keyword">exit</span>
 
 xxxx@debian:~/bash$ <span class="token function">ssh</span> seller_center@47.89.xx.xx
 Last login: Tue Jan 17 10:45:46 2017 from 119.xx.xx.xx
@@ -576,8 +576,7 @@ Welcome to aliyun Elastic Compute Service<span class="token operator">!</span>
 
 使用supervisord 部署监控,挂掉后自动重启
   #pip install supervisor
-  #echo_supervisord_conf > supervisord.conf
- 
+  #echo_supervisord_conf &gt; supervisord.con
                         
                     </div>
                     <div class="publish-info">

@@ -389,20 +389,20 @@ In [10]: q
 Out[10]: deque([3, 4, 5])
 </code></pre>
 <p>更一般的， deque 类可以被用在任何你只需要一个简单队列数据结构的场合。 如果你不设置最大队列大小，那么就会得到一个无限大小队列，你可以在队列的两端执行添加和弹出元素的操作。</p>
-<pre class=" language-python3"><code class="language-python3">>>> q = deque()
->>> q.append(1)
->>> q.append(2)
->>> q.append(3)
->>> q
+<pre class=" language-python3"><code class="language-python3">&gt;&gt;&gt; q = deque()
+&gt;&gt;&gt; q.append(1)
+&gt;&gt;&gt; q.append(2)
+&gt;&gt;&gt; q.append(3)
+&gt;&gt;&gt; q
 deque([1, 2, 3])
->>> q.appendleft(4)
->>> q
+&gt;&gt;&gt; q.appendleft(4)
+&gt;&gt;&gt; q
 deque([4, 1, 2, 3])
->>> q.pop()
+&gt;&gt;&gt; q.pop()
 3
->>> q
+&gt;&gt;&gt; q
 deque([4, 1, 2])
->>> q.popleft()
+&gt;&gt;&gt; q.popleft()
 4
 </code></pre>
 <p>在队列两端插入或删除元素时间复杂度都是 O(1) ，区别于列表，在列表的开头插入或删除元素的时间复杂度为 O(N) 。</p>
@@ -441,26 +441,26 @@ class PriorityQueue:
         return heapq.heappop(self._queue)[-1]
 </code></pre>
 <p>它的使用方式：</p>
-<pre class=" language-python3"><code class="language-python3">>>> class Item:
+<pre class=" language-python3"><code class="language-python3">&gt;&gt;&gt; class Item:
 ...     def __init__(self, name):
 ...         self.name = name
 ...     def __repr__(self):
 ...         return 'Item({!r})'.format(self.name)
 ...
->>> q = PriorityQueue()
->>> q.push(Item('foo'), 1)
->>> q.push(Item('bar'), 5)
->>> q.push(Item('spam'), 4)
->>> q.push(Item('grok'), 1)
->>> q.pop()
+&gt;&gt;&gt; q = PriorityQueue()
+&gt;&gt;&gt; q.push(Item('foo'), 1)
+&gt;&gt;&gt; q.push(Item('bar'), 5)
+&gt;&gt;&gt; q.push(Item('spam'), 4)
+&gt;&gt;&gt; q.push(Item('grok'), 1)
+&gt;&gt;&gt; q.pop()
 Item('bar')
->>> q.pop()
+&gt;&gt;&gt; q.pop()
 Item('spam')
->>> q.pop()
+&gt;&gt;&gt; q.pop()
 Item('foo')
->>> q.pop()
+&gt;&gt;&gt; q.pop()
 Item('grok')
->>>
+&gt;&gt;&gt;
 </code></pre>
 <p>仔细观察可以发现，第一个 pop() 操作返回优先级最高的元素。 另外注意到如果两个有着相同优先级的元素（ foo 和 grok ），pop 操作按照它们被插入到队列的顺序返回的。</p>
 <!-- zh-CN:- -->
@@ -591,6 +591,57 @@ Item('grok')
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2018/05/24/2018/deep_learning_about/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="追溯深度学习的历史">
+                        
+                        <span class="card-title">追溯深度学习的历史</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            最小二乘法def compute_error_for_line_given_points(b, m, coordinates):
+    totalError = 0
+    for i in range(0, len(coordinate
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2018-05-24
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2018/05/23/2018/nginx_config/">
                     <div class="card-image">
                         
@@ -607,9 +658,9 @@ Item('grok')
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2018-05-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-05-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -629,48 +680,6 @@ Item('grok')
                         <span class="chip bg-color">nginx</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2018/05/23/2018/red_black_tree/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="红黑树">
-                        
-                        <span class="card-title">红黑树</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            nginx红黑树
-红黑树的每个节点上都有存储位表示节点的颜色，颜色是红(Red)或黑(Black)。红黑树的特性:(1) 每个节点或者是黑色，或者是红色。(2) 根节点是黑色。(3) 每个叶子节点是黑色。 [注意：这里叶子节点，是指为空的叶
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-05-23
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Linux-Unix/" class="post-category">
-                                    Linux/Unix
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
                 </div>
                 
             </div>

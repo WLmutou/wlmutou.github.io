@@ -393,7 +393,7 @@ headers <span class="token operator">=</span> <span class="token punctuation">{<
             <span class="token string">'Upgrade-Insecure-Requests'</span><span class="token punctuation">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span>
             <span class="token string">'User-Agent'</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 Edge/15.15063'</span><span class="token punctuation">}</span>
 
-<span class="token keyword">def</span> <span class="token function">search_weibo</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span>str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> str<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">def</span> <span class="token function">search_weibo</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span>str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> str<span class="token punctuation">)</span><span class="token punctuation">:</span>
     req_url <span class="token operator">=</span> search_weibo_url <span class="token operator">%</span> <span class="token punctuation">(</span> quote<span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span> 
     headers<span class="token punctuation">[</span><span class="token string">'Referer'</span><span class="token punctuation">]</span> <span class="token operator">=</span> req_url
     <span class="token keyword">try</span><span class="token punctuation">:</span>
@@ -429,7 +429,7 @@ headers <span class="token operator">=</span> <span class="token punctuation">{<
 
 <span class="token string">""</span>"
 <span class="token comment" spellcheck="true">## 查 id</span>
-<span class="token keyword">def</span> <span class="token function">findid</span><span class="token punctuation">(</span>item<span class="token punctuation">:</span> element<span class="token punctuation">.</span>ResultSet<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> str<span class="token punctuation">:</span>
+<span class="token keyword">def</span> <span class="token function">findid</span><span class="token punctuation">(</span>item<span class="token punctuation">:</span> element<span class="token punctuation">.</span>ResultSet<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> str<span class="token punctuation">:</span>
     <span class="token keyword">try</span><span class="token punctuation">:</span>
         hrefstr <span class="token operator">=</span> item<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span> class_<span class="token operator">=</span><span class="token string">'avator'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>a<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"href"</span><span class="token punctuation">)</span>
         person_url <span class="token operator">=</span> hrefstr<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"?"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
@@ -440,7 +440,7 @@ headers <span class="token operator">=</span> <span class="token punctuation">{<
         <span class="token keyword">return</span> <span class="token string">""</span>
 
 <span class="token comment" spellcheck="true">## 查微博正文</span>
-<span class="token keyword">def</span> <span class="token function">find_content</span><span class="token punctuation">(</span>item<span class="token punctuation">:</span> element<span class="token punctuation">.</span>ResultSet<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> str<span class="token punctuation">:</span>
+<span class="token keyword">def</span> <span class="token function">find_content</span><span class="token punctuation">(</span>item<span class="token punctuation">:</span> element<span class="token punctuation">.</span>ResultSet<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> str<span class="token punctuation">:</span>
     <span class="token keyword">try</span><span class="token punctuation">:</span>
         contentstr <span class="token operator">=</span> item<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span> class_<span class="token operator">=</span><span class="token string">"content"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>p<span class="token punctuation">.</span>text 
         <span class="token comment" spellcheck="true"># print (contentstr)</span>
@@ -449,7 +449,7 @@ headers <span class="token operator">=</span> <span class="token punctuation">{<
         <span class="token keyword">print</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span>
         <span class="token keyword">return</span> <span class="token string">""</span>
 
-<span class="token keyword">def</span> <span class="token function">find_str_num</span><span class="token punctuation">(</span>text <span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> str<span class="token punctuation">:</span>
+<span class="token keyword">def</span> <span class="token function">find_str_num</span><span class="token punctuation">(</span>text <span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> str<span class="token punctuation">:</span>
     <span class="token keyword">try</span><span class="token punctuation">:</span>
         num <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">'\d+'</span><span class="token punctuation">,</span> text<span class="token punctuation">)</span>
         <span class="token keyword">return</span> num<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
@@ -457,7 +457,7 @@ headers <span class="token operator">=</span> <span class="token punctuation">{<
         <span class="token keyword">return</span> <span class="token string">'0'</span>
 
 <span class="token comment" spellcheck="true">## 查评论数</span>
-<span class="token keyword">def</span> <span class="token function">find_discuss_count</span><span class="token punctuation">(</span>item<span class="token punctuation">:</span> element<span class="token punctuation">.</span>ResultSet<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">[</span>str<span class="token punctuation">]</span><span class="token punctuation">:</span>
+<span class="token keyword">def</span> <span class="token function">find_discuss_count</span><span class="token punctuation">(</span>item<span class="token punctuation">:</span> element<span class="token punctuation">.</span>ResultSet<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>str<span class="token punctuation">]</span><span class="token punctuation">:</span>
     <span class="token keyword">try</span><span class="token punctuation">:</span>
         all_lis <span class="token operator">=</span> item<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span> class_<span class="token operator">=</span><span class="token string">"card-act"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">"li"</span><span class="token punctuation">)</span>
         <span class="token comment" spellcheck="true"># 转发，评论， 点赞</span>
@@ -470,7 +470,7 @@ headers <span class="token operator">=</span> <span class="token punctuation">{<
 
 
 <span class="token comment" spellcheck="true">## 查发布时间</span>
-<span class="token keyword">def</span> <span class="token function">find_public_time</span><span class="token punctuation">(</span>item<span class="token punctuation">:</span> element<span class="token punctuation">.</span>ResultSet<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> str<span class="token punctuation">:</span>
+<span class="token keyword">def</span> <span class="token function">find_public_time</span><span class="token punctuation">(</span>item<span class="token punctuation">:</span> element<span class="token punctuation">.</span>ResultSet<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> str<span class="token punctuation">:</span>
     publish_time <span class="token operator">=</span> <span class="token string">""</span>
     <span class="token keyword">try</span><span class="token punctuation">:</span>
         publish_time <span class="token operator">=</span>  item<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">,</span> class_<span class="token operator">=</span><span class="token string">"from"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>a<span class="token punctuation">.</span>text
@@ -498,7 +498,7 @@ headers <span class="token operator">=</span> <span class="token punctuation">{<
     <span class="token keyword">return</span> publish_time
 
 
-<span class="token keyword">def</span> <span class="token function">ParseHTML</span><span class="token punctuation">(</span>text <span class="token punctuation">:</span>str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+<span class="token keyword">def</span> <span class="token function">ParseHTML</span><span class="token punctuation">(</span>text <span class="token punctuation">:</span>str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
     <span class="token comment" spellcheck="true"># 假设html是需要被解析的html</span>
     <span class="token comment" spellcheck="true">#将html传入BeautifulSoup 的构造方法,得到一个文档的对象</span>
     soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>text<span class="token punctuation">,</span><span class="token string">'html.parser'</span><span class="token punctuation">,</span>from_encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
@@ -612,7 +612,7 @@ head_row <span class="token operator">=</span> <span class="token punctuation">[
             self<span class="token punctuation">.</span>tree_date<span class="token punctuation">.</span>heading<span class="token punctuation">(</span>i<span class="token punctuation">,</span> text<span class="token operator">=</span>key_dict<span class="token punctuation">.</span>get<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
         <span class="token comment" spellcheck="true"># self.tree_date.heading</span>
-        self<span class="token punctuation">.</span>tree_date<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token string">'&lt;Double-1>'</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>double_click_view<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 双击左键弹出显示</span>
+        self<span class="token punctuation">.</span>tree_date<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token string">'&lt;Double-1&gt;'</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>double_click_view<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 双击左键弹出显示</span>
         <span class="token comment" spellcheck="true">####### 表格 end ######</span>
 
         <span class="token comment" spellcheck="true"># 到处到excel 表格按钮</span>
@@ -853,33 +853,29 @@ head_row <span class="token operator">=</span> <span class="token punctuation">[
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/01/2020/python_tkinter_weeibo/">
+                <a href="/2020/04/04/2020/pyppeteer_chromium/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="python tkinter显示表格">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="pyppeteer安装chromium">
                         
-                        <span class="card-title">python tkinter显示表格</span>
+                        <span class="card-title">pyppeteer安装chromium</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-爬取微博requests，解析用bs4显示，用个tkinter主要几个字段: [“微博id”, “微博正文”,”评论数”, “转发数”, “点赞数”, “发布时间”]
-获取搜索先用requests获取搜索结果
-#!/usr/bin/env
+                            selenium,有时候会有许多缺点.有些网页是可以检测到是否是使用了selenium.不允许跨域 cookies 保存以及登录的时候必须先打开网页然后后加载cookies(经常遇到unable to set cookie)还可以pyppe
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-01
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-04
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -892,12 +888,11 @@ head_row <span class="token operator">=</span> <span class="token punctuation">[
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/pyppetter/">
+                        <span class="chip bg-color">pyppetter</span>
                     </a>
                     
                 </div>

@@ -381,14 +381,14 @@
 <p>3)QuerySet执行后，其结果是保存在内存中的。</p>
 </blockquote>
 <p>3.理解Django中QuerySet的缓存机制<br>QuerySet对调用方法是不执行缓存的。比如下面的两端代码，其中一个会被缓存，另一个不会：</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> entry <span class="token operator">=</span> Entry<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
-<span class="token operator">>></span><span class="token operator">></span> entry<span class="token punctuation">.</span>blog <span class="token comment" spellcheck="true"># Blog对象会被从数据库查询出来</span>
-<span class="token operator">>></span><span class="token operator">></span> entry<span class="token punctuation">.</span>blog <span class="token comment" spellcheck="true"># 第二次访问的缓存对象，不会再次执行查询</span>
+<pre class=" language-python"><code class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> entry <span class="token operator">=</span> Entry<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> entry<span class="token punctuation">.</span>blog <span class="token comment" spellcheck="true"># Blog对象会被从数据库查询出来</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> entry<span class="token punctuation">.</span>blog <span class="token comment" spellcheck="true"># 第二次访问的缓存对象，不会再次执行查询</span>
 </code></pre>
 <p>但是对于调用的查询方法，是不会被缓存的：</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> entry <span class="token operator">=</span> Entry<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
-<span class="token operator">>></span><span class="token operator">></span> entry<span class="token punctuation">.</span>authors<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 第一次会执行查询</span>
-<span class="token operator">>></span><span class="token operator">></span> entry<span class="token punctuation">.</span>authors<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 第二次会再执行一次查询</span>
+<pre class=" language-python"><code class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> entry <span class="token operator">=</span> Entry<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> entry<span class="token punctuation">.</span>authors<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 第一次会执行查询</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> entry<span class="token punctuation">.</span>authors<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 第二次会再执行一次查询</span>
 </code></pre>
 <p>4.使用模板语言中的with标签<br>在视图模板中，针对QuerySet对象使用with标签</p>
 <p>5.使用iterator()方法<br>对于缓存的QuerySet使用iterator()方法</p>
@@ -435,8 +435,8 @@
 </blockquote>
 <p>15.对于批量更新和删除操作使用 QuerySet.update() 和 QuerySet.delete()</p>
 <p>16.如果需要查询对象的外键，则使用外键字段而不是使用关联的对象的主键，比如：</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span>entry<span class="token punctuation">.</span>blog_id <span class="token comment" spellcheck="true">#应该使用这种方式</span>
-<span class="token operator">>></span><span class="token operator">></span>entry<span class="token punctuation">.</span>blog<span class="token punctuation">.</span>id <span class="token comment" spellcheck="true">#不要使用这种方式</span>
+<pre class=" language-python"><code class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>entry<span class="token punctuation">.</span>blog_id <span class="token comment" spellcheck="true">#应该使用这种方式</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>entry<span class="token punctuation">.</span>blog<span class="token punctuation">.</span>id <span class="token comment" spellcheck="true">#不要使用这种方式</span>
 </code></pre>
 <!-- zh-CN:- -->
 <script>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wlmutou.github.io/"/>
-  <updated>2020-04-01T07:34:21.426Z</updated>
+  <updated>2020-04-06T14:18:24.765Z</updated>
   <id>http://wlmutou.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pyppeteer安装chromium</title>
+    <link href="http://wlmutou.github.io/2020/04/04/2020/pyppeteer_chromium/"/>
+    <id>http://wlmutou.github.io/2020/04/04/2020/pyppeteer_chromium/</id>
+    <published>2020-04-03T16:00:00.000Z</published>
+    <updated>2020-04-06T14:18:24.765Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;selenium,有时候会有许多缺点.有些网页是可以检测到是否是使用了selenium.不允许跨域 cookies 保存以及登录的时候必须先打开网页然后后加载cookies(经常遇到unable to set cookie)&lt;br&gt;还可以pyppeteer爬虫(用过都说好)&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://wlmutou.github.io/categories/python/"/>
+    
+    
+      <category term="pyppetter" scheme="http://wlmutou.github.io/tags/pyppetter/"/>
+    
+  </entry>
   
   <entry>
     <title>python tkinter显示表格</title>
@@ -111,16 +132,15 @@
   </entry>
   
   <entry>
-    <title>golang明明的随机数</title>
-    <link href="http://wlmutou.github.io/2020/03/27/2020/3_mingming_rand/"/>
-    <id>http://wlmutou.github.io/2020/03/27/2020/3_mingming_rand/</id>
+    <title>golang获取终端输入</title>
+    <link href="http://wlmutou.github.io/2020/03/27/2020/1_2_readinput/"/>
+    <id>http://wlmutou.github.io/2020/03/27/2020/1_2_readinput/</id>
     <published>2020-03-26T16:00:00.000Z</published>
     <updated>2020-04-01T07:11:14.741Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;牛客网华为机实第三题&lt;br&gt;明明的随机数&lt;/p&gt;
-&lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;明明想在学校中请一些同学一起做一项问卷调查，为了实验的客观性，他先用计算机生成了N个1到1000之间的随机整数（N≤1000），对于其中重复的数字，只保留一个，把其余相同的数去掉，不同的数对应着不同的学生的学号。然后再把这些数从小到大排序，按照排好的顺序去找同学做调查。请你协助明明完成“去重”与“排序”的工作(同一个测试用例里可能会有多组数据，希望大家能正确处理)。&lt;br&gt;&lt;/p&gt;
+      &lt;p&gt;牛客网的机实要写上读取输入&lt;br&gt;golang的输入没有python的方便哟&lt;/p&gt;
     
     </summary>
     
@@ -133,15 +153,16 @@
   </entry>
   
   <entry>
-    <title>golang获取终端输入</title>
-    <link href="http://wlmutou.github.io/2020/03/27/2020/1_2_readinput/"/>
-    <id>http://wlmutou.github.io/2020/03/27/2020/1_2_readinput/</id>
+    <title>golang明明的随机数</title>
+    <link href="http://wlmutou.github.io/2020/03/27/2020/3_mingming_rand/"/>
+    <id>http://wlmutou.github.io/2020/03/27/2020/3_mingming_rand/</id>
     <published>2020-03-26T16:00:00.000Z</published>
     <updated>2020-04-01T07:11:14.741Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;牛客网的机实要写上读取输入&lt;br&gt;golang的输入没有python的方便哟&lt;/p&gt;
+      &lt;p&gt;牛客网华为机实第三题&lt;br&gt;明明的随机数&lt;/p&gt;
+&lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;明明想在学校中请一些同学一起做一项问卷调查，为了实验的客观性，他先用计算机生成了N个1到1000之间的随机整数（N≤1000），对于其中重复的数字，只保留一个，把其余相同的数去掉，不同的数对应着不同的学生的学号。然后再把这些数从小到大排序，按照排好的顺序去找同学做调查。请你协助明明完成“去重”与“排序”的工作(同一个测试用例里可能会有多组数据，希望大家能正确处理)。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -344,30 +365,6 @@
   </entry>
   
   <entry>
-    <title>nginx之configure</title>
-    <link href="http://wlmutou.github.io/2018/05/23/2018/nginx_config/"/>
-    <id>http://wlmutou.github.io/2018/05/23/2018/nginx_config/</id>
-    <published>2018-05-22T16:00:00.000Z</published>
-    <updated>2020-04-01T07:11:14.741Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;configure 做检测操作系统内核和已安装的软件，参数解析,中间目录的生成以及&lt;br&gt;根据各种参数生成一些C源码文件、Makefile文件等。&lt;br&gt;查看configure如何工作，也可以看出Nginx的一些设计思想&lt;br&gt;以及，shell脚本这样写，清晰明了。&lt;/p&gt;
-&lt;p&gt;查看参数&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;./configure --help
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-    
-      <category term="Linux/Unix" scheme="http://wlmutou.github.io/categories/Linux-Unix/"/>
-    
-    
-      <category term="nginx" scheme="http://wlmutou.github.io/tags/nginx/"/>
-    
-  </entry>
-  
-  <entry>
     <title>python实现一个优先级队列</title>
     <link href="http://wlmutou.github.io/2018/05/23/2018/python_deque/"/>
     <id>http://wlmutou.github.io/2018/05/23/2018/python_deque/</id>
@@ -430,6 +427,30 @@ deque([4, 1, 2])
   </entry>
   
   <entry>
+    <title>nginx之configure</title>
+    <link href="http://wlmutou.github.io/2018/05/23/2018/nginx_config/"/>
+    <id>http://wlmutou.github.io/2018/05/23/2018/nginx_config/</id>
+    <published>2018-05-22T16:00:00.000Z</published>
+    <updated>2020-04-01T07:11:14.741Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;configure 做检测操作系统内核和已安装的软件，参数解析,中间目录的生成以及&lt;br&gt;根据各种参数生成一些C源码文件、Makefile文件等。&lt;br&gt;查看configure如何工作，也可以看出Nginx的一些设计思想&lt;br&gt;以及，shell脚本这样写，清晰明了。&lt;/p&gt;
+&lt;p&gt;查看参数&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;./configure --help
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux/Unix" scheme="http://wlmutou.github.io/categories/Linux-Unix/"/>
+    
+    
+      <category term="nginx" scheme="http://wlmutou.github.io/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
     <title>红黑树</title>
     <link href="http://wlmutou.github.io/2018/05/23/2018/red_black_tree/"/>
     <id>http://wlmutou.github.io/2018/05/23/2018/red_black_tree/</id>
@@ -468,36 +489,6 @@ deque([4, 1, 2])
     
     
       <category term="js" scheme="http://wlmutou.github.io/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>go 自动补全出现gocode panic</title>
-    <link href="http://wlmutou.github.io/2018/05/05/2018/gocode_panic/"/>
-    <id>http://wlmutou.github.io/2018/05/05/2018/gocode_panic/</id>
-    <published>2018-05-04T16:00:00.000Z</published>
-    <updated>2020-04-01T07:11:14.741Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;自己用的电脑，装的是go1.8。然而办公的装了go1.9&lt;br&gt;今天突然想升级下。&lt;/p&gt;
-&lt;p&gt;把go1.9下回来,把go1.8备份下&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$sudo mv /usr/local/go /usr/local/go_1.8
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;解压到/usr/local/go&lt;br&gt;然后把 go_1.8/bin/目录下的之前安装的软件，cp回go1.9的目录下&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ cp /usr/local/go_1.8/bin/gocode /usr/local/go/bin/gocde
-$ cp /usr/local/go_1.8/bin/godep /usr/local/go/bin/godep
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;其他不变。&lt;br&gt;再编辑代码的时候，发现不能补全了。&lt;/p&gt;
-&lt;p&gt;提示类似:&lt;br&gt;gocode panic. Please check you code by &lt;code&gt;go build&lt;/code&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="go" scheme="http://wlmutou.github.io/categories/go/"/>
-    
-    
-      <category term="go" scheme="http://wlmutou.github.io/tags/go/"/>
     
   </entry>
   
